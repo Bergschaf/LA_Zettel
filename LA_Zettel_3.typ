@@ -34,3 +34,6 @@ $R = {(b,a) in X#sym.times X|  exists A in AA: a in A and b in A}$
 transitiv:
 
 $forall (a,b) in R, (b,c) in R: (a,c) in R$
+
+... Not finished
+
