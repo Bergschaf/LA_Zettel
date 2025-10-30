@@ -42,4 +42,13 @@ $ (a,b) in R and (b,c) in R &<=> (exists A in AA: a in A and b in A) and (exists
 &=> exists A in AA: a in A and c in A \
 &<=> (a, c) in R $
 ]
+=== z.z 
+$X \/ R = AA$
+#proof[
+
+$ X \/ R subset AA :$
+
+
+
+]
 
