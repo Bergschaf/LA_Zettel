@@ -46,9 +46,22 @@ $ (a,b) in R and (b,c) in R &<=> (exists A in AA: a in A and b in A) and (exists
 $X \/ R = AA$
 #proof[
 
-$ X \/ R subset AA :$
-
+$   AA subset X \/ R:$
+$ "Da eine Partiotion nie " emptyset "enthält:" forall A in AA exists a in A $
+$ =>[a]_R= {x| exists B in AA : a in B and x in B}  $
+Da $AA$ eine Partition ist, gilt $forall B in AA: a in B => A = B$
+$ =>[a]_R= {x| a in A and x in A}  $
+$ =>[a]_R = A $
+$ forall A in AA: exists[a]=A $
+$ =>  AA subset X \/ R $
+$$
+$  X \/ R subset AA: $
+$ [a] := {b | exists A in AA: b in A and a in A } $
+$ =>forall [a] in X \/ R: exists A in AA: a in A $
+$ => forall [a] in X \/ R exists A in AA "mit" a in A: $
+$ [a] = {b|b in A and a}$
+$ => [a] = A $
+$ => X \/ R subset AA $
 
 
 ]
-
