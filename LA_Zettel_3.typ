@@ -1,7 +1,10 @@
 #import "Preamble.typ" : *
 
 = Zettel 3
-Bearbeitet von: Leon Krasniqi, Christian Krause, Silas Gaschler(Tutorium:Gregor Teupke(Mi 16:15))
+Bearbeitet von:\
+    Leon Krasniqi,
+    Christian Krause,
+    Silas Gaschler(Tutorium:Gregor Teupke(Mi 16:15))
 == Aufgabe 1
 === a)
 ${(0,0),(1,0)} in R$
@@ -9,6 +12,7 @@ ${(0,0),(1,0)} in R$
 ${(1,0),(2,0)} in R$
 
 ${(0,0),(2,0)} in.not R$
+
 
 $=> "nicht transitiv"$
 === b)
@@ -62,6 +66,20 @@ $ => forall [a] in X \/ R exists A in AA "mit" a in A: $
 $ [a] = {b|b in A and a}$
 $ => [a] = A $
 $ => X \/ R subset AA $
+]
+== Aufgabe 2
+$A = {(x_1,x_2)in RR^2|x_1^2+x_2^2<=1 and x_1 <=0 and x_2 <=0}$
+$R:= {((x_1,x_2),(y_1,y_2))in RR^2 #sym.times RR^2}$
+==== Maxiumum bestimmen
+_Anmerkung: Hier könnte ein Bild helfen_
 
+Vermutung: Das Maximum ist $(0,0)$
+#proof[
+
+*z.z*\
+$ forall (x_1,x_2) in A: ((x_1,x_2),(0,0)) in R $
+$ <=> forall(x_1,x_2)in A: (x_1<0) or (x_1 = 0) and (x_2 <= 0) $
+da $(x_1,x_2)in A$ ist $x_1 <= 0 and x_2 <= 0$
+$ => (0,0)" ist das Maximum und Supremum und maximales Element von" A $
 
 ]
