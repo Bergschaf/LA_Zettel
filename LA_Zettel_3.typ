@@ -16,7 +16,7 @@ ${(0,0),(2,0)} in.not R$
 
 $=> "nicht transitiv"$
 === b)
-$R := {(a,b) in X#sym.times X|  exists A in AA: a in A and b in A}$
+$R := {(a,b) in X#sym.times X|  exists A in cal(A): a in A and b in A}$
 
 #lemma[ 
 $R$ ist eine Äqvivalenzrelation.
@@ -24,45 +24,45 @@ $R$ ist eine Äqvivalenzrelation.
 #proof[
 Reflexivität:
 
-da $AA$ eine Partition von $X$ ist, gilt für jedes $a in X: exists A in AA, a in A$
-, darum ist $(a,a) in {(a,a)in X #sym.times X| exists A in AA, a in A and a in A} subset R$ 
+da $AA$ eine Partition von $X$ ist, gilt für jedes $a in X: exists A in cal(A), a in A$
+, darum ist $(a,a) in {(a,a)in X #sym.times X| exists A in cal(A), a in A and a in A} subset R$ 
 
 
 Symmetrie:
-$R = {(a,b) in X#sym.times X|  exists A in AA: a in A and b in A}$
+$R = {(a,b) in X#sym.times X|  exists A in cal(A): a in A and b in A}$
 
-$ R = {(b,a) in X#sym.times X|  exists A in AA: a in A and b in A} $
+$ R = {(b,a) in X#sym.times X|  exists A in cal(A): a in A and b in A} $
 d. h. für alle $a,b in X$ gilt:
   $ (a,b) in R &<=> exists A in AA: a in A and b in A \
-    &<=> exists A in AA: b in A and a in A \
+    &<=> exists A in cal(A): b in A and a in A \
   &<=> (b,a) in R $
 
 Transitivität:
 Für alle $a,b,c in X$ gilt:
-$ (a,b) in R and (b,c) in R &<=> (exists A in AA: a in A and b in A) and (exists B in AA: b in B and c in B)  \ 
-"Da A eine Partition von X ist, gilt: " & exists! A in AA, b in A quad "d.h. " A = B
+$ (a,b) in R and (b,c) in R &<=> (exists A in cal(A): a in A and b in A) and (exists B in cal(A): b in B and c in B)  \ 
+"Da A eine Partition von X ist, gilt: " & exists! A in cal(A), b in A quad "d.h. " A = B
   \
- & <=> exists A in AA: a in A and b in A and c in A \ 
-&=> exists A in AA: a in A and c in A \
+ & <=> exists A in cal(A): a in A and b in A and c in A \ 
+&=> exists A in cal(A): a in A and c in A \
 &<=> (a, c) in R $
 ]
 === z.z 
-$X \/ R = AA$
+$ X \/ R = cal(A) $
 #proof[
 
-$   AA subset X \/ R:$
-$ "Da eine Partiotion nie " emptyset "enthält:" forall A in AA exists a in A $
-$ =>[a]_R= {x| exists B in AA : a in B and x in B}  $
-Da $AA$ eine Partition ist, gilt $forall B in AA: a in B => A = B$
+$   cal(A) subset X \/ R:$
+$ "Da eine Partiotion nie " emptyset "enthält:" forall A in cal(A) exists a in A $
+$ =>[a]_R= {x| exists B in cal(A) : a in B and x in B}  $
+Da $cal(A)$ eine Partition ist, gilt $forall B in cal(A): a in B => A = B$
 $ =>[a]_R= {x| a in A and x in A}  $
 $ =>[a]_R = A $
-$ forall A in AA: exists[a]=A $
-$ =>  AA subset X \/ R $
+$ forall A in cal(A): exists[a]=A $
+$ =>  cal(A) subset X \/ R $
 $$
-$  X \/ R subset AA: $
-$ [a] := {b | exists A in AA: b in A and a in A } $
-$ =>forall [a] in X \/ R: exists A in AA: a in A $
-$ => forall [a] in X \/ R exists A in AA "mit" a in A: $
+$  X \/ R subset cal(A): $
+$ [a] := {b | exists A in cal(A): b in A and a in A } $
+$ =>forall [a] in X \/ R: exists A in cal(A): a in A $
+$ => forall [a] in X \/ R exists A in cal(A) "mit" a in A: $
 $ [a] = {b|b in A and a}$
 $ => [a] = A $
 $ => X \/ R subset AA $
