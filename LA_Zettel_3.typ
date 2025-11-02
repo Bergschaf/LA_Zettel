@@ -189,6 +189,8 @@ In allen Fällen gilt $(a,c) in prec.curly.eq =>$ transitiv.
 
 _Anmerkung: Die Transitivität folgt auch, da $prec union Delta x$ die reflexive Hülle von $prec$ bildet, und transitiv bei der Hüllenbildung erhalten bleibt._
 
+== 3.3)
+
 #lemma[
   Sei $f: X -> Y$ eine Funktion und $A_1, A_2 subset.eq X$ $B_1, B_2 subset.eq Y$ Mengen:
   $ (i)quad  f(A_1) \\ f(A_2) subset.eq f(A_1 \\ A_2) $
@@ -215,7 +217,6 @@ Aus $y in f(A_1) \\ f(A_1) => y in f(A_1 \\ A_2)$ folgt $f(A_1) \\ f(A_2) subset
   $
   Aus der logischen Äquivalenz folgt die Gleichheit (ii).
 ]
-
 #lemma[
   6.5b) Seien $(X_i)_(i in I)$ $I$ indizierte teilmengen von $X$ und eine Relation $R subset.eq X times Y$. 
   Es gilt: $ B_(r)(R, inter.big_(i in I)X_i) subset.eq inter.big_(i in I) B_r(R, X_i) $
