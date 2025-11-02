@@ -68,6 +68,8 @@ $ => [a] = A $
 $ => X \/ R subset AA $
 ]
 == Aufgabe 2
+=== a)
+==== (i)
 $A = {(x_1,x_2)in RR^2|x_1^2+x_2^2<=1 and x_1 <=0 and x_2 <=0}$
 $R:= {((x_1,x_2),(y_1,y_2))in RR^2 #sym.times RR^2}$
 ==== Maxiumum bestimmen
@@ -83,3 +85,107 @@ da $(x_1,x_2)in A$ ist $x_1 <= 0 and x_2 <= 0$
 $ => (0,0)" ist das Maximum und Supremum und maximales Element von" A $
 
 ]
+=== Miniaimale Elemente bestimmen
+Vermutung: $(x_1,x_2):x_1+x_2 )= 1$ sind die minimalen Elemente von A
+
+z.z $ forall(x_1,x_2)in A "mit" x_1^2+x_2^2=1: forall(y_1,y_2)in A: ((y_1,y_2),(x_1,x_2)in.not R) $
+#proof[
+
+Annahme: 
+$ exists (y_1,y_2)in A: ((y_1,y_2),(x_1,x_2)) in R $
+$ =>y_1 <=x_1 and y_2 <=x_2 $
+
+Da $x_1,X_2,x_3,x_4<=0$ gilt:
+$ => y_1^2>=x_1^2 and y_2^2>=x_2^2 $
+$ => y_1^2>=1-x_2^2 and y_2^2 >=x_2^2 $
+$ => y_1^2>=1-x_2^2 and y_2^2-x_2^2 >= 0 $
+$ y_1^2+y_2^2 =>1underbrace(-x_2^2+y_2^2 , >0) $
+$ y_1^2+y_2^2 >=1 $
+$ (y_1,y_2)in.not A $
+$=>$ Widerspruch
+
+]
+
+minimale Elemente sind also ${x_1,x_2|(x_1,x_2)in A and (x_1^2+x_2^2)=1}$
+Es gibt kein Infimum, da es keine Vergleichbarkeit zwischen den minimalen Elementen gibt.
+==== (ii)
+Das Supremum kann nicht mehr eindeutig bestimmt weden, da $exists y in RR: forall(0,x)in A union({0} #sym.times RR)((0,x)<(0,y))$
+
+=== b)
+$prec.curly.eq$ ist eine Ordnungsrelation
+$=>prec.curly.eq$ ist reflexiv, antisymetrisch und transitiv.
+$ prec := prec.curly.eq\\Delta x $
+z.z $prec$ ist irreflexiv, transitiv und antisymetrisch.
+#proof[
+
+$prec= {(a,b)in X #sym.times X| (a,b in prec.curly.eq and a eq.not b)}$
+\
+\
+irreflexiv:
+
+Annahme $prec$ ist nicht irreflexiv. Dann:
+$ exists a in X: (a,a)in prec  $
+$=> (a,a)in prec.curly.eq and a eq.not a$
+$=>$ Widerspruch $=>prec$ ist irreflexiv.
+
+\
+antisymetrisch:
+
+Annahme: $prec$ ist nicht antisymetrisch. Dann:
+$ exists a,b in X: (a,b)in prec and (b,a)in prec $
+$=>(a,b) in prec.curly.eq and (b,a)in prec.curly.eq$
+
+Da $prec.curly.eq$ antisymetrisch ist, folgt:
+$ a = b $
+$=>$ Widerspruch den $prec$ ist irreflexiv $=> prec$ ist antisymetrisch.
+
+\
+transitiv:
+
+$ (a,b) in prec and (b,c) in prec $
+$ => (a,b) in prec.curly.eq and (b,c) in prec.curly.eq and a eq.not b and b eq.not c and a eq.not c $
+($a eq.not c$ gilt da $prec$ irreflexiv)
+$ => (a,c) in prec.curly.eq and a eq.not c $
+$ => (a,c) in prec => "transitiv"$ 
+
+]
+
+==== (ii)
+$prec$ ist transitiv, irreflexiv und antisymetrisch 
+$ prec.curly.eq := prec union Delta x  = {(a,b)in X #sym.times X| (a,b) in prec.curly.eq or (a,b) in Delta x} $
+
+z.z $ prec.curly.eq $ ist reflexiv, antisymetrisch und transitiv.
+#proof[
+
+reflexiv:
+
+$ forall a in X: (a,a) in prec.curly.eq $
+$ <=> forall a in X: (a,a)in prec or underbrace((a,a)in Delta x ,top) $
+$=> prec.curly.eq$ ist reflexiv.
+
+\
+antisymetrisch:
+Annahme: $ prec.curly.eq$ ist nicht antisymetrisch. Dann:
+$ exists a,b in X: (a,b)in prec.curly.eq and (b,a)in prec.curly.eq  and a eq.not b $
+$ => underbrace((a,b) in prec and (b,a)in prec,bot" da "prec "antisym.") or underbrace((a,b) in Delta x  and (b,a)in Delta x,bot"da" a eq.not b) $
+$=>$ Widerspruch $=> prec.curly.eq$ ist antisymmetrisch.
+
+\
+transitiv:
+
+Seien $(a,b) in prec.curly.eq$ und $(b,c) in prec.curly.eq$.
+
+Wir unterscheiden 3 Fälle:
+
+Liegt $(a,b)in Delta x$, so ist $a=b$ und damit $(a,c)=(b,c) in prec.curly.eq$.
+
+Liegt $(b,c) in  Delta x$, so ist $b=c$ und damit $(a,c)=(a,b) in prec.curly.eq$.
+
+Liegen $(a,b) in prec$ und $(b,c) in prec$, so folgt a $prec$ transitiv: 
+  $(a,c) in prec subset.eq prec.curly.eq$.
+
+In allen Fällen gilt $(a,c) in prec.curly.eq =>$ transitiv.
+
+]
+
+_Anmerkung: Die Transitivität folgt auch, da $prec union Delta x$ die reflexive Hülle von $prec$ bildet, und transitiv bei der Hüllenbildung erhalten bleibt._
