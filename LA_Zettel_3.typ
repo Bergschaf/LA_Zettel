@@ -73,7 +73,6 @@ $ => X \/ R subset AA $
 $A = {(x_1,x_2)in RR^2|x_1^2+x_2^2<=1 and x_1 <=0 and x_2 <=0}$
 $R:= {((x_1,x_2),(y_1,y_2))in RR^2 #sym.times RR^2}$
 ==== Maxiumum bestimmen
-_Anmerkung: Hier könnte ein Bild helfen_
 
 Vermutung: Das Maximum ist $(0,0)$
 #proof[
