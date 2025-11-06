@@ -2,7 +2,7 @@
 
 = LA Zettel 3
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke(Mi 16:15))
-== Aufgabe 1
+== Aufgabe 4.1
 - (i): $f$ ist injektiv
 - (ii): $exists g: Y->X: g compose f = id_X$
 - (iii) Für beliebige $X_0$ und beliebige $f_1,f_2: X_0 -> X$ gilt: Aus $f compose f_1=f compose f_2$ folgt $f_1=f_2$
@@ -37,4 +37,18 @@ Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor
   *$ =>(("i")=>("ii")=>("iii")=>("i"))=>(("i")<=>("ii")<=>("iii")) $*
 
 ]
-#emph(text(red)[Die obige Aufgabe sollte noch einmal auf klarheit überprüft werden])
+
+== Aufgabe 4.3
+a)
+Es könnte ein Index $in J_1 inter J_2$ existieren. Demnach wäre der Index nach der Vereinigung von $J_1$ und $J_2$ nicht mehr einer der Ursprünglichen Familien zuzuordnen. Indem wir $J_1$ und $J_2$ durch das jeweilige Kartesische Produkt mit zwei Mengen ${1},{2}$, generieren wir zwei disjunkte Indexmengen $J_1 times {1}$ und $J_2 times {2}$. So kann jedem Index immernoch eindeutig ein Element der Familie zugeordnet werden. So kann garantiert werden, das unsere Konkatenation/neue Familie alle Element der beiden Familien beinhaltet.
+
+b)
+
+Def:
+$ ||_(i in I)F_i:union.dot.big({i}times J_i)->Y $
+$ ||_(i in I)F_i(i,j):=F_i (j) $
+c)
+geg: $ Y=N_0;I = RR; $$ J_i= {A subset.eq ZZ|max(A)<=i}; $ $ F_i : J_i in.rev A |-> hash (A inter RR_(>0)) $
+
+$=>$
+$ ||_(i in I)F_i (15.7,{-10,10}) = hash({-10,10} inter RR_(>0)) = hash({10})= 1 $
