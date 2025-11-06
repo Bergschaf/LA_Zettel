@@ -15,6 +15,12 @@ $ A inter X =A $
 $ therefore e=X $
 
 (iii)$ (pset(X),Delta) $
+Assoziativität: $ (A Delta B)Delta C= $
+
+Neutrales Elemente: $ X Delta emptyset = (X without emptyset)union(emptyset without X) $
+$ =X union emptyset $
+$ =X $
+$ therefore e = X $
 
 (iv)$ (X^X,compose) $
 
