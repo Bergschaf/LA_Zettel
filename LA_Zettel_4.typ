@@ -1,40 +1,6 @@
 #import "Preamble.typ": *
 
 = LA Zettel 3
-= Nr. I-4.4
-
-(i) $ (RR^X,+) $
-Monoid, da Elemente wieder in der Menge sind, Additin assoziativ ist und als neutrales Elemente e gilt:
-$ X $
-und so weiter halt jungs wie soll ich das tippen??
-
-(ii)$ (pset(X),inter) $
-Monoid, da de Teilmengen wieder in der Ursprungsmenge sind, der Schnitt assoziativ ist und das neutrale Elemente gegeben ist durch:
-$ A subset X $
-$ A inter X =A $
-$ therefore e=X $
-
-(iii)$ (pset(X),Delta) $
-
-(iv)$ (X^X,compose) $
-
-(v)$ (ZZ²,((x_1,x_2),(y_1,y_2))mapsto (x_1y_1,x_2+y_2)) $
-Monoid, da Elemente wieder in der Menge sind und Assoziativität und das neutrales Element e gegeben ist durch:
-
-Assoziativität:
-
-1)$ (z_1,z_2)in ZZ^2 $
-$ [(x_1,x_2),(y_1,y_2)],(z_1,z_2) |-> (x_1y_1,x_2+y_2),(z_1,z_2) $
-$ |->(x_1y_1z_1,x_2+y_2+z_2) $
-
-2) $ (x_1,x_2),[(y_1,y_2),(z_1,z_2)]|->(x_1,x_2),(y_1z_1,y_2+z_2) $
-$ |->((x_1y_1z_1,x_2+y_2+z_2)) $
-Neutrales Elemente:
-$ (0,0),(0,0)|->(0,0+0)=(0,0) $
-$ therefore e=(0,0) $
-
-(vi) $ (pset(X),(A,B)|->A^complement union B^complement) $
-
 
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke(Mi 16:15))
 == Aufgabe 4.1
@@ -88,22 +54,46 @@ geg: $ Y=N_0;I = RR; $$ J_i= {A subset.eq ZZ|max(A)<=i}; $ $ F_i : J_i in.rev A 
 $=>$
 $ ||_(i in I)F_i (15.7,{-10,10}) = hash({-10,10} inter RR_(>0)) = hash({10})= 1 $
 
+== Aufgabe 4.4
 (i) $ (RR^X,+) $
-Monoid, da Elemente wieder in der Menge sind, Additin assoziativ ist und als neutrales Elemente e gilt:
-$ X $
-und so weiter halt jungs wie soll ich das tippen??
+Da alle Fuktionswerte in $RR$ liegen gilt:
+$ forall f_1,f_2 in RR^X: $
+$ f_1(x)+f_2(x) = f_3(x) in RR^X $
 
+Assoziativität:
+Da die Addition assoziativ ist gilt:
+$ forall f_n:X in.rev x |-> r in RR $
+$ => f_1(x)+(f_2(x)+f_3(x)) = (f_1(x)+f_2(x))+f_3(x) $
+
+neutrales Element:
+$ f_0: X in.rev x |->0 in RR $
+#proof[
+  $ forall f_n in RR^X, forall x_0,x_n in X: $
+  $ f_0(x_0)+f_n (x_n)=0+f_n (x_n) = f_n (x_n) $
+]
+$ =>(RR^X,+) "ist ein Monoid" $
 (ii)$ (pset(X),inter) $
 Monoid, da de Teilmengen wieder in der Ursprungsmenge sind, der Schnitt assoziativ ist und das neutrale Elemente gegeben ist durch:
 $ A subset X $
 $ A inter X =A $
-$ therefore e=X $
+$ => e=X $
 
-(iii)$ (pset(X),Delta) $
+(iii)
+$ (pset(X),Delta) $
+$ forall A,B in pset(X): A Delta B = {underbrace(\\B, in pset(X)) union underbrace(\\A, in pset(X))}in pset(X) $
+Wie in der  Plenarübung besprochen, ist die symmetrische Differenz assoziativ.
+Das neutrale Element ist die leere Menge, da:
+$ forall A in pset(X): A Delta emptyset = {underbrace(A\\ emptyset, A) union underbrace(emptyset\\A, emptyset)} = A $
+$=> (pset(X),Delta)$ ist ein Monoid.
 
 (iv)$ (X^X,compose) $
 
-(v)$ (ZZ²,((x_1,x_2),(y_1,y_2))mapsto (x_1y_1,x_2+y_2)) $
+Die Komposition von Funktionen ist assoziativ (nach Script)
+$ forall f_1,f_2 in X^X: $
+$ f_1(x)compose f_2(x) = f_1(f_2(x)) = f_3(x) in X^X $
+
+(v)
+$ (ZZ²,((x_1,x_2),(y_1,y_2))mapsto (x_1y_1,x_2+y_2)) $
 Monoid, da Elemente wieder in der Menge sind und Assoziativität und das neutrales Element e gegeben ist durch:
 
 Assoziativität:
@@ -114,10 +104,13 @@ $ |->(x_1y_1z_1,x_2+y_2+z_2) $
 
 2) $ (x_1,x_2),[(y_1,y_2),(z_1,z_2)]|->(x_1,x_2),(y_1z_1,y_2+z_2) $
 $ |->((x_1y_1z_1,x_2+y_2+z_2)) $
-Neutrales Elemente:
-$ (0,0),(0,0)|->(0,0+0)=(0,0) $
-$ therefore e=(0,0) $
+Neutrales Element:
+$ forall (y_1,y_2) in ZZ^2: (1,0),(y_1,y_2)|->(1*y_1,y_2 + 0)=(y_1,y_2) $
+$ => e=(1,0) $
 
 (vi) $ (pset(X),(A,B)|->A^complement union B^complement) $
 
+$ ((A,B)|->A^complement union B^complement,C)|->((A^complement union B^complement)^complement union C^complement) $
+$ ((A,(B,C)|->B^complement union C^complement)|->(A^complement union (B^complement union C^complement)^complement) $
 
+$=>$ keine Assoziativität $=>$ Keine Halbgruppe
