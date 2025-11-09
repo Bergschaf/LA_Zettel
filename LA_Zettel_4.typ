@@ -81,7 +81,26 @@ $ => e=X $
 (iii)
 $ (pset(X),Delta) $
 $ forall A,B in pset(X): A Delta B = {underbrace(\\B, in pset(X)) union underbrace(\\A, in pset(X))}in pset(X) $
-Wie in der  Plenarübung besprochen, ist die symmetrische Differenz assoziativ.
+Die symetrische Differenz ist assoziativ, da:
+$
+  (A triangle.t B) triangle.t C
+  &= ((A without B) union(B without A)) triangle.t C \
+  &= ((A without B) union(B without A)) without C med union med C without((A without B) union(B without A)) \
+  &= (A without B without C) med union med(B without A without C) med union med((C without(A without B)) without(B without A)) \
+  &= (A without B without C) med union med(B without A without C) med union med(((C without A) union(C inter B)) without(B without A)) \
+  &= (A without B without C) med union med(B without A without C) med union med((C without A) without(B without A)) med union med((C inter B) without(B without A)) \
+  &= (A without B without C) med union med(B without A without C) med union med(C without A without B) med union med(A inter B inter C)
+$$
+  A triangle.t(B triangle.t C)
+  &= A triangle.t((B without C) union(C without B)) \
+  &= A without((B without C) union(C without B)) med union med((B without C) union(C without B)) without A \
+  &= ((A without(B without C)) without(C without B)) med union med(B without C without A) med union med(C without B without A) \
+  &= (((A without B) union(A inter C)) without(C without B)) med union med(B without A without C) med union med(C without A without B) \
+  &= ((A without B) without(C without B)) med union med((A inter C) without(C without B)) med union med(B without A without C) med union med(C without A without B) \
+  &= (A without B without C) med union med(A inter B inter C) med union med(B without A without C) med union med(C without A without B)
+$
+$=> (A Delta B) Delta C = A Delta (B Delta C)$
+
 Das neutrale Element ist die leere Menge, da:
 $ forall A in pset(X): A Delta emptyset = {underbrace(A\\ emptyset, A) union underbrace(emptyset\\A, emptyset)} = A $
 $=> (pset(X),Delta)$ ist ein Monoid.
