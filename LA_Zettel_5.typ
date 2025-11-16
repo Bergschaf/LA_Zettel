@@ -6,8 +6,7 @@ Entscheiden, ob die Beispiele aus Aufgabe 4. Gruppen sind. \
 (i): Der Monoid $(RR^X, +)$ ist eine Gruppe, das invers kann punktweise gebildet werden: Für alle $g in RR^X$ gilt $g^(-1)(x) = -g(x)$ und damit $g(x) + g^(-1)(x)= g(x) - g(x) = 0$ \
 
 (ii): Der Monoid $(pset(cal(X)), inter)$ ist keine Gruppe, weil alle Elemente (außer $X$) kein Inverses besitzen, da für alle $a,b in pset(cal(X))$ gilt:
-$ a inter b => a = b = X $
-TODO genauer \
+$ a inter b = X => a = b = X $
 (iii): Der Monoid $(pset(cal(X)), triangle)$ ist eine Gruppe, da jedes Element invertierbar ist. Für alle $x in pset(cal(X))$ gilt $x^(-1) = x$, da 
 $ x triangle x = (x \\ x union x \\ x) = emptyset union emptyset = emptyset $
 (IV): Der Moniod $(X^X, compose)$ ist im allgemeinen (für $\# X > 1$) keine Gruppe, da nicht alle Funktionen $f : X -> X$ invertierbar sind (Ein gutes Beispiel dafür sind konstante Funktionen) und damit nicht alle Elemente des Monoids ein inverses Element besitzen.
@@ -28,9 +27,50 @@ Da das neutrale Element die Menge ${0}$ ist, gibt es für alle Mengen $A in pset
 
 Notitz: Oben wurde angenommen, dass $\# B >= 1$. Falls $B = emptyset$ gilt $A tilde(+) emptyset = emptyset$. Damit kann $emptyset$ auch nicht das inverse Element von $A$ sein. $emptyset$ kann auch nicht das neutrale Element sein, da $A tilde(+) emptyset = emptyset eq.not A$
 
+#let links_a = $attach(*, bl: a)$
 
 === c)
-TODO
+
+#lemma[
+  Ist $(G, star)$ eine Gruppe, dann sind alle Links- und Rechtstranslationen #links_a und $star_a$ bijektionen für alle $a in G$.
+]
+#proof([
+
+  Für alle $a in G$ ist zu zeigen:\
+  Die Funktion $#links_a : G -> G := x mapsto a star x$ ist invertierbar. \
+  Die inverse Funktion von #links_a ist gegeben durch $attach(*, bl: a^(-1))$, da: $a star (a^(-1) star x) = x$ und $a^(-1) star (a star x) = x$ für alle $x in G$ gilt und $a^(-1)$ aufgrund der Gruppenstruktur exsitiert. \
+  Das selbe gilt für die Rechtstranslation: Das Inverse der Funktion $star_a$ ist gegeben durch $star_(a^(-1))$, da $(x * a) * a^(-1) = x$ und $(x * a^(-1)) * a = x$ für alle $x in G$.
+])
+
+#lemma[
+  Sei $(H, star)$ eine nichtleere Halbgruppe. Wenn für alle $a in H$, die Links- und Rechtstranslationen #links_a und $star_a$ surjektive Abbildungen sind, dann ist $(H, star)$ eine Gruppe.
+]
+#proof([
+  Aus der Surjektivität von #links_a und $star_a$ folgt:
+  $ forall a, x in H, exists y in H, a * y = x quad (i) $
+  $ forall a, x in H, exists y in H, y * a = x quad (i i) $ 
+  Sei $a in H$ beliebig aber fest. Es gibt ein $e in H$, sodass $a * e = a$ (folgt aus $(i)$). 
+  Weiter gibt es für jedes $g in H$ ein $y in H$, sodass $y * a = G$ (folgt aus $(i i)$).
+  Es gilt also $ g * e = (y * a) * e = y * (a * e) = y * a = g $
+  Da $g$ beliebig gewählt war ist $e$ Rechtsneutral zu allen Elementen von H. \
+  Analog erhält man ein $e'$, das Linksneutral zu allen Elementen von H ist, es gilt also 
+  $ g * e = e' * g = g quad forall g in H $
+  Daraus folgt: $e = e' * e = e'$. Es gibt also ein Neutrales Element in $H$, das wir nun als $e$ bezeichnen werden. \
+  Um zu zeigen, dass $(H, star)$ eine Gruppe ist, fehlt noch, dass es für jedes Element ein inverses gilt. \
+  Aus $(i)$ folgt, dass es für jedes $a in H$, ein Element $a'$ gibt, sodass $a * a' = e$.
+  Aus $(i i)$ folgt, dass es für jedes $a in H$ ein Element $a''$ gibt, sodass $a'' * a  = e$.
+  $ &a * a' = e  \
+   <=>& a'' * (a * a') = a'' \
+   <=>&  (a'' * a) * a' = a'' \
+    <=>& e * a' = a'' \
+ <=>&  a ' = a''
+  $
+  Es gibt also für jedes $a in H$ ein inverses Element $a'$, sodass $a * a' = a' * a = e$
+
+
+  
+
+])
 
 == Aufgabe 4
 Es sei $(G, *)$ eine Gruppe.
