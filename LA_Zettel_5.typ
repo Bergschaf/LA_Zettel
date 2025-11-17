@@ -1,6 +1,8 @@
 #import "Preamble.typ" : *
 
 = LA Zettel 5
+Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium Gregor Teupke)
+
 == Aufgabe 1
 Entscheiden, ob die Beispiele aus Aufgabe 4. Gruppen sind. \
 (i): Der Monoid $(RR^X, +)$ ist eine Gruppe, das invers kann punktweise gebildet werden: Für alle $g in RR^X$ gilt $g^(-1)(x) = -g(x)$ und damit $g(x) + g^(-1)(x)= g(x) - g(x) = 0$ \
@@ -72,50 +74,6 @@ Notitz: Oben wurde angenommen, dass $\# B >= 1$. Falls $B = emptyset$ gilt $A ti
 
 ])
 
-== Aufgabe 4
-Es sei $(G, *)$ eine Gruppe.
-#let ord = emph[ord]
-#lemma[
-  $ord(a) = ord(a^(-1))$
-]
-
-#proof[
-Fall 1: $ord(a)$ ist endlich:
-Sei $n = ord(a)$. Es gilt
-  $ a^n = 1$. \
-  Außerdem gilt $ 1 = a^n * (a^(-1))^n = 1 *  (a^(-1))^n = (a^(-1))^n $
-  Daraus folgt, dass $ord(a^(-1))$ maximal n ist.
-  Im Folgenden zeigen wir, dass $ord(a^(-1))$ mindestens n ist. \
-  Sei also $ord(a^(-1)) = m$ für ein $m < n$. Dann gilt $(a^(-1))^m = 0$ und
-  $ 1 = a^m * (a^(-1))^m = a^m * 1 = a^m $
-  Da $ord(a) > m$ ist dies ein Widerspruch.
-
-Fall 2: $ord(a)$ ist unendlich, d.h. es gibt kein $n in NN$, sodass $a^n = 1$.\
-  Wir zeigen nun durch einen Widerspruch, dass $ord(a^(-1))$ auch unendlich sein muss.\
-  Sei also $(a^(-1))^m = 1$ für ein $m in NN$. Dann gilt für alle $n > m$:
-  $ 1 = a^n * (a^(-1))^n = a^n * (a^(-1))^(n-m) = a^m $
-  Das ist ein Widerspruch, da $ord(a)$ unendlich ist, es kann also kein $m$ geben, sodass $a^m = 1$.
-]
-
-
-#lemma[
-  $ [(K(G), *) = ({1}, *)] <=> (G, *) "ist abelsch" $
-]
-#proof[
-  $==>$:
-  Aus $[(K(G), *) = ({1}, *)]$ folgt, dass $ {a * b * a^(-1) * b^(-1) | a,b in G} = {1} $
-  da die Erzeugermenge der Gruppe $({1}, *)$ die Menge mit ausschließlich dem leeren Element ist.\
-  Es gilt also:
-  $ a * b * a^(-1) * b^(-1) = 1 quad forall a,b in G \
-<=> a * b * a^(-1) * b^(-1) * b * a = b * a quad forall a,b in G \
-  <=> a * b = b * a quad forall a,b in G $
-  Das ist genau die Bedingung, die $G$ zu einer abelschen Gruppe macht. \
-  $<==$: In einer abelschen Gruppe gilt $a * b * a^(-1) * b^(-1) = 1$ für alle $a,b in G$.
-  Damit ist $ K(G) = angle.l {a * b * a^(-1) * b^(-1) | a,b in G} angle.r=angle.l {1 | a,b in G}angle.r = angle.l{1}angle.r = {1} $
- da die von ${1}$ erzeugte Untergruppe von $G$: $({1},*)$ ist.
-
-]
-Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium Gregor Teupke)
 
 
 
@@ -209,6 +167,54 @@ Keine Gruppe.
   $ => "Eine Gruppe mit maximal 4 Elementen ist abelsch" $
 
 ]
+
+
+
+== Aufgabe 5
+Es sei $(G, *)$ eine Gruppe.
+#let ord = emph[ord]
+#lemma[
+  $ord(a) = ord(a^(-1))$
+]
+
+#proof[
+Fall 1: $ord(a)$ ist endlich:
+Sei $n = ord(a)$. Es gilt
+  $ a^n = 1$. \
+  Außerdem gilt $ 1 = a^n * (a^(-1))^n = 1 *  (a^(-1))^n = (a^(-1))^n $
+  Daraus folgt, dass $ord(a^(-1))$ maximal n ist.
+  Im Folgenden zeigen wir, dass $ord(a^(-1))$ mindestens n ist. \
+  Sei also $ord(a^(-1)) = m$ für ein $m < n$. Dann gilt $(a^(-1))^m = 0$ und
+  $ 1 = a^m * (a^(-1))^m = a^m * 1 = a^m $
+  Da $ord(a) > m$ ist dies ein Widerspruch.
+
+Fall 2: $ord(a)$ ist unendlich, d.h. es gibt kein $n in NN$, sodass $a^n = 1$.\
+  Wir zeigen nun durch einen Widerspruch, dass $ord(a^(-1))$ auch unendlich sein muss.\
+  Sei also $(a^(-1))^m = 1$ für ein $m in NN$. Dann gilt für alle $n > m$:
+  $ 1 = a^n * (a^(-1))^n = a^n * (a^(-1))^(n-m) = a^m $
+  Das ist ein Widerspruch, da $ord(a)$ unendlich ist, es kann also kein $m$ geben, sodass $a^m = 1$.
+]
+
+
+#lemma[
+  $ [(K(G), *) = ({1}, *)] <=> (G, *) "ist abelsch" $
+]
+#proof[
+  $==>$:
+  Aus $[(K(G), *) = ({1}, *)]$ folgt, dass $ {a * b * a^(-1) * b^(-1) | a,b in G} = {1} $
+  da die Erzeugermenge der Gruppe $({1}, *)$ die Menge mit ausschließlich dem leeren Element ist.\
+  Es gilt also:
+  $ a * b * a^(-1) * b^(-1) = 1 quad forall a,b in G \
+<=> a * b * a^(-1) * b^(-1) * b * a = b * a quad forall a,b in G \
+  <=> a * b = b * a quad forall a,b in G $
+  Das ist genau die Bedingung, die $G$ zu einer abelschen Gruppe macht. \
+  $<==$: In einer abelschen Gruppe gilt $a * b * a^(-1) * b^(-1) = 1$ für alle $a,b in G$.
+  Damit ist $ K(G) = angle.l {a * b * a^(-1) * b^(-1) | a,b in G} angle.r=angle.l {1 | a,b in G}angle.r = angle.l{1}angle.r = {1} $
+ da die von ${1}$ erzeugte Untergruppe von $G$: $({1},*)$ ist.
+
+]
+
+
 
 
 == Aufgabe 5.6
