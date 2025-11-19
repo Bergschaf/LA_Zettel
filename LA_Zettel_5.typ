@@ -1,10 +1,7 @@
 #import "Preamble.typ" : *
 
 = LA Zettel 5
-Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium Gregor Teupke)
-
-== Aufgabe 1
-Entscheiden, ob die Beispiele aus Aufgabe 4. Gruppen sind. \
+Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium Gregor Teupke) == Aufgabe 1 Entscheiden, ob die Beispiele aus Aufgabe 4. Gruppen sind. \
 (i): Der Monoid $(RR^X, +)$ ist eine Gruppe, das invers kann punktweise gebildet werden: Für alle $g in RR^X$ gilt $g^(-1)(x) = -g(x)$ und damit $g(x) + g^(-1)(x)= g(x) - g(x) = 0$ \
 
 (ii): Der Monoid $(pset(cal(X)), inter)$ ist keine Gruppe, weil alle Elemente (außer $X$) kein Inverses besitzen, da für alle $a,b in pset(cal(X))$ gilt:
@@ -14,6 +11,7 @@ $ x triangle x = (x \\ x union x \\ x) = emptyset union emptyset = emptyset $
 (IV): Der Moniod $(X^X, compose)$ ist im allgemeinen (für $\# X > 1$) keine Gruppe, da nicht alle Funktionen $f : X -> X$ invertierbar sind (Ein gutes Beispiel dafür sind konstante Funktionen) und damit nicht alle Elemente des Monoids ein inverses Element besitzen.
 
 (V): Der Monoid $(ZZ^2, ((x_1, x_2), (y_1, y_2)) mapsto (x_1 dot y_1, x_2 + y_2)))$ ist keine Gruppe, da nicht alle Elemente invertierbar sind. Zum Beispiel das Element $(2,2)$. Es müsste ein Element $(x_1, x_2) in ZZ^2$ geben, sodass $x_1 * 2 = 1$ und $x_2 + 2 = 0$. Ein solches $x_1$ gibt es allerdings nicht in $ZZ$ \
+
 === b)
 
 $(pset(cal(G)), tilde(star))$ ist keine Gruppe. Sei $G$ die gruppe der ganzen Zahlen $ZZ$ mit der addition $+$.
@@ -34,9 +32,7 @@ Notitz: Oben wurde angenommen, dass $\# B >= 1$. Falls $B = emptyset$ gilt $A ti
 === c)
 
 #lemma[
-  Ist $(G, star)$ eine Gruppe, dann sind alle Links- und Rechtstranslationen #links_a und $star_a$ bijektionen für alle $a in G$.
-]
-#proof([
+  Ist $(G, star)$ eine Gruppe, dann sind alle Links- und Rechtstranslationen #links_a und $star_a$ bijektionen für alle $a in G$. ] #proof([
 
   Für alle $a in G$ ist zu zeigen:\
   Die Funktion $#links_a : G -> G := x mapsto a star x$ ist invertierbar. \
@@ -52,7 +48,7 @@ Notitz: Oben wurde angenommen, dass $\# B >= 1$. Falls $B = emptyset$ gilt $A ti
   $ forall a, x in H, exists y in H, a * y = x quad (i) $
   $ forall a, x in H, exists y in H, y * a = x quad (i i) $
   Sei $a in H$ beliebig aber fest. Es gibt ein $e in H$, sodass $a * e = a$ (folgt aus $(i)$).
-  Weiter gibt es für jedes $g in H$ ein $y in H$, sodass $y * a = G$ (folgt aus $(i i)$).
+  Weiter gibt es für jedes $g in H$ ein $y in H$, sodass $y * a = g$ (folgt aus $(i i)$).
   Es gilt also $ g * e = (y * a) * e = y * (a * e) = y * a = g $
   Da $g$ beliebig gewählt war ist $e$ Rechtsneutral zu allen Elementen von H. \
   Analog erhält man ein $e'$, das Linksneutral zu allen Elementen von H ist, es gilt also
@@ -170,7 +166,7 @@ Keine Gruppe.
 
 = Nr.I-5.3
 
-$ sigma := $
+$ sigma := mat(1,2,3,4,5,6,7,8;1,6,7,8,3,4,5,2) $
 Fehlstände:
 $ (2,5),(2,6),(2,7),(2,8),(3,5),(3,6),(3,7),(3,8),(4,5),(4,6),(4,7),(4,8),(5,8),(6,8),(7,8) $
 Signum:
@@ -184,7 +180,7 @@ Transpositionen:
 
 = Nr.I-5.4
 (a) Sei $X$ eine nichtleere Menge und $A subset X$ sowie $n in NN$, dann gelten:
-#lemma[$(pset(A), triangle)$ ist eine Untergruppe der Gruppe $(pset(X) triangle)$]
+#lemma[$(pset(A), triangle)$ ist eine Untergruppe der Gruppe $(pset(X), triangle)$]
 #proof[
   1. $pset(A)$ ist nicht leer, da es mindestens das neutrale Element $e=nothing$ enthält
   2. $forall a,b in pset(A):a triangle b in pset(A)$
@@ -222,7 +218,8 @@ Transpositionen:
   $ U_1 subset U_2 or U_2 subset U_1 $
 ]
 #proof[
-  Annahme:
+  $(U_1 union U_2, star)$ ist Untergruppe $=> U_1 subset U_2 or U_2 subset U_1 $\
+ Kontraposition:
   $ U_1 subset.not U_2 and U_2 subset.not U_1 $
   $ => exists a in U_1: a in.not U_2 and exists b in U_2: b in.not U_1 $
   $ => a star b in (U_1 union U_2, star) $
@@ -231,7 +228,8 @@ Transpositionen:
   $ => b in U_1 $
   2. $a star b star b' in U_2$
   $ => a in U_2 $
-  Das ist widersprüchlich zur Annahme, weshalb $U_1 subset U_2 or U_2 subset U_1$ gilt.
+  Das ist widersprüchlich zur Annahme, weshalb $U_1 subset U_2 or U_2 subset U_1$ gilt. \
+  Die andere Rückrichtung ist trivial, da $U_1 union U_2 = U_1 or U_1 union U_2 = U_2$.
 ]
 
 
@@ -294,9 +292,9 @@ Fall 2: $ord(a)$ ist unendlich, d.h. es gibt kein $n in NN$, sodass $a^n = 1$.\
   $ => union.big_n [a_n]= G $
   Es gilt:
   $ hash A union B = hash A + hash B $
-  $ forall a in G : hash a*U = hash U $
+  $ forall a in G : hash (a*U) = hash U $
   $
-    => hash G = hash union.big_n [a_n] = hash [a_1] union [a_2] union...union[a_n] = hash [a_1] + hash[a_2]+ ...+hash [a_n] = hash U + hash U +...+ hash U = n*hash U
+    => hash G = hash union.big_n [a_n] = hash ([a_1] union [a_2] union...union[a_n]) = hash [a_1] + hash[a_2]+ ...+hash [a_n] = hash U + hash U +...+ hash U = n*hash U
   $
 
   $ => hash G = n * hash U => hash U | hash G $
