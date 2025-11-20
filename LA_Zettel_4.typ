@@ -116,6 +116,15 @@ $ A subset X $
 $ A inter X =A $
 $ => e=X $
 
+<<<<<<< HEAD
+(iii)$ (pset(X),Delta) $
+Assoziativität: $ (A Delta B)Delta C= $
+
+Neutrales Elemente: $ X Delta emptyset = (X without emptyset)union(emptyset without X) $
+$ =X union emptyset $
+$ =X $
+$ therefore e = X $
+=======
 (iii)
 $ (pset(X),Delta) $
 $ forall A,B in pset(X): A Delta B = {underbrace(\\B, in pset(X)) union underbrace(\\A, in pset(X))}in pset(X) $
@@ -142,6 +151,7 @@ $=> (A Delta B) Delta C = A Delta (B Delta C)$
 Das neutrale Element ist die leere Menge, da:
 $ forall A in pset(X): A Delta emptyset = {underbrace(A\\ emptyset, A) union underbrace(emptyset\\A, emptyset)} = A $
 $=> (pset(X),Delta)$ ist ein Monoid.
+>>>>>>> origin/Leon-Dev
 
 (iv)$ (X^X,compose) $
 
