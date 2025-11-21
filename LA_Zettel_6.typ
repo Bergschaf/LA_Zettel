@@ -3,8 +3,37 @@
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke(Mi 16:15))
 = Aufgabe 6.3
 a)
+$ ZZ\/RR = {[a] = a + ZZ| a in RR} $
+$ [a]tilde(+)[c] = [a + c] $
+$ =>"neutrales Element" e = [0] $
+Gesucht ist $b in RR$, sodass:
+$ n[b] = [0]; n in NN $
+$ iff b+...+b =n b= 0 ;n in NN $
+$ => b = 0 $
+$=>$ Das einzige Element mit endlicher Ordnung in $RR\/ZZ$ ist [0].
 
 b)
+#lemma[
+
+  Sei $(G star)$ eine Gruppe und $E subset.eq G$ mit $chevron E chevron.r=G$ und $(N,star)$ untergruppe von $G$.
+
+  Dann gilt: $N$ ist genau dann normalteiler von $(G,star)$, wenn $a star N = N star a$ für alle $a in E$ gilt.
+
+
+]
+#proof[
+
+  $ forall a_(n)in E: N = a'_(n)star N star a_(n) (iff a_(n) star N = N star a_(n)) $
+  Da $E$ ein Erzeugendensystem von $G$ ist, gilt auch:
+  $ forall b in G: b = a_(1)star ...star a_(n) $
+  $ b' = a'_(n)star...star a'_(1) $
+  $
+    => b' star N star b =underbrace(a'_(n)star underbrace(...star underbrace(a'_(1) star N star a_(1), N) star ..., N) star a_(n), N) = N
+  $
+
+
+
+]
 
 c)
 
@@ -31,4 +60,50 @@ $ N_(1) subset.eq N_(2) $
 
 ]
 d)
+$
+  \( G \, star.op \) upright(" Gruppe") \, #h(2em) \( N \, star.op \) upright(" Normalteiler") \, #h(2em) a star.op N = N star.op a
+$
 
+#lemma[
+  $G \/ N$ ist abelsch, wenn $K \( G \) subset.eq N$.
+
+
+]
+Es gilt für alle $a in G$: $ a star.op N = N star.op a . $
+
+$
+  G \/ N = { thin a star.op N divides a in G thin } \, #h(2em) \[ a \] thin hat(star.op) thin \[ b \] = \[ a star.op b \] = \( a star.op b \) star.op N .
+$
+#proof[
+
+  Zu zeigen:
+  $
+    \[ a \] thin tilde(star.op) thin \[ b \] = \[ b \] thin tilde(star.op) thin \[ a \] quad arrow.l.r.double quad K \( G \) subset.eq N .
+  $
+
+  $ \[ a \] thin tilde(star.op) thin \[ b \] = \[ b \] thin tilde(star.op) thin \[ a \] $
+
+  $ arrow.l.r.double quad \[ a star.op b \] = \[ b star.op a \] $
+
+  $ arrow.l.r.double quad \( a star.op b \) star.op N = \( b star.op a \) star.op N $
+
+  $ arrow.l.r.double quad N star.op \( a star.op b \) = N star.op \( b star.op a \) . $
+
+  $
+    arrow.l.r.double { thin c star.op a star.op b divides c in N thin } = { thin d star.op b star.op a divides d in N thin }
+  $
+
+  $ arrow.l.r.double forall c in N #h(0em) exists d in N : #h(0em) c star.op a star.op b = d star.op b star.op a $
+
+  $
+    arrow.l.r.double forall c in N #h(0em) exists d in N : #h(0em) c star.op a star.op b star.op \( b star.op a \)' = d .
+  $
+
+  Da $c' in N$:
+  $
+    arrow.l.r.double forall c in N #h(0em) exists d in N : #h(0em) a star.op b star.op a' star.op b' = underbrace(c' star.op d, in N) .
+  $
+
+  $ arrow.l.r.double quad a star.op b star.op a' star.op b' in N quad arrow.l.r.double quad K \( G \) subset.eq N . $
+
+]
