@@ -1,6 +1,39 @@
 #import "Preamble.typ": *
 = LA Zettel 6
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke(Mi 16:15))
+
+= Aufgabe 6.2
+*(a)*
+
+(i)
+
+Das neutrale Element der Addition ist $0$
+$ forall x in RR : f(x) = ln(x)= 0 iff x = e^0=1 $
+$ => "Kern"(f) = {1} $
+Da $f$ surjektiv ist gilt:
+$ "Bild"(f) = RR $
+(ii)
+
+Das neutrale element der Addition ist $0$
+$ forall x in QQ: f(x)=3x +1 = 0 iff x = -1/3 $
+$ => "Kern"(f)= {-1/3} $
+$ "Bild"(f)= {y in RR|y = f(x) = 3x +1 and x in QQ} = {y | (y-1)/3 in QQ} $
+(iii)
+
+Das neutrale Element von $({top,bot},"XOR")$ ist $bot$
+$ forall x in ZZ_2:(x > 0)iff bot "falls " x <=0 <=> x = 0 $
+$ => "Kern"(f)= {0} $
+$ f(0)= bot;f(1)=top => "f ist surjektiv"=>"Bild"(f)={top,bot} $
+(iv)
+Das neutrale Element von $cal(P(RR,Delta))$ ist $emptyset$(Auf vorherigen Zetteln gezeigt)
+
+ges:
+$ f(sigma) = emptyset $
+$ iff [0,-"sgn"(sigma)]= emptyset $
+$ <=> "sgn"(sigma)=1 $
+$ => "Kern"(f) = {sigma in S_3|"sgn"(sigma)=1} = A_(3) $
+$"sgn"(sigma)$ ist entweder $1$ oder $-1$
+$ =>"Bild"(f)= {emptyset,[0,1]} $
 = Aufgabe 6.3
 a)
 $ ZZ\/RR = {[a] = a + ZZ| a in RR} $
