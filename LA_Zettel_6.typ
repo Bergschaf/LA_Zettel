@@ -228,7 +228,6 @@ $
   $ arrow.l.r.double quad a star.op b star.op a' star.op b' in N quad arrow.l.r.double quad K \( G \) subset.eq N . $
 ]
 
-== Aufgabe 3
 
 
 == Aufgabe 4
