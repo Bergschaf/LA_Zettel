@@ -1,8 +1,8 @@
-#import "Preamble.typ": *
-= LA Zettel 6
-Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke(Mi 16:15))
+#import "Preamble.typ" : *
 
-= Aufgabe 6.2
+== Aufgabe 1
+
+== Aufgabe 2
 *(a)*
 
 (i)
@@ -48,7 +48,7 @@ $=>$ Das einzige Element mit endlicher Ordnung in $RR\/ZZ$ ist [0].
 b)
 #lemma[
 
-  Sei $(G star)$ eine Gruppe und $E subset.eq G$ mit $chevron E chevron.r=G$ und $(N,star)$ untergruppe von $G$.
+  Sei $(G star)$ eine Gruppe und $E subset.eq G$ mit $chevron.l E chevron.r=G$ und $(N,star)$ untergruppe von $G$.
 
   Dann gilt: $N$ ist genau dann normalteiler von $(G,star)$, wenn $a star N = N star a$ für alle $a in E$ gilt.
 
@@ -138,5 +138,39 @@ $
   $
 
   $ arrow.l.r.double quad a star.op b star.op a' star.op b' in N quad arrow.l.r.double quad K \( G \) subset.eq N . $
+]
 
+== Aufgabe 3
+
+
+== Aufgabe 4
+
+Es seien $(G_1, star)$ und $(G_2, square)$ zwei Gruppen. ($G_1$ ist endlich).
+
+#lemma([
+  Ist auch $G_2$ endlich und $\# G_1$ und $\# G_2$ sind teilerfremd, dann existiert zwischen $G_1$ und $G_2$ nur der triviale Gruppenhomomorphismus.
+])
+#proof[
+  Sei $f: G_1 -> G_2$ ein Gruppenhomomorphismus von $G_1$ nach $G_2$.
+  Da $G_1$ endlich ist, gilt $\# G_1 \/ ker(f) divides \# G_1$.
+  Dann gilt nach dem Homomorphiesatz:
+  $ G_1 \/ ker(f) tilde.equiv im(f) => \# (G_1 \/ ker(f)) = \# im(f) $ 
+  In die vorherige Gleichung eingesetzt ergibt das $\# im(f) \/ \# G_1$. \
+  Da $f$ ein Gruppenhomomorphismus ist, ist $im(f)$ eine Untergruppe von $G_2$.Nach dem Satz von Lagrange gilt also $\# im(f) divides \# g_2$. \
+  Da wir angenommen haben, dass $\# G_1$ und $\# G_2$ teilerfremd sind, muss gelten $\# im(f) = 1$. D.h. $f$ kann nur der triviale Gruppenhomomorphismus $ f: x mapsto e_2$ sein.
+]
+
+#lemma[
+  Ist $\# G_1$ eine Primzahl, dann ist jeder Gruppenhomomorphismus von $(G_1, star)$ nach $(G_2, square)$ trivial oder injektiv.
+]
+#proof[
+  Sei $f: G_1 -> G_2$ ein Gruppenhomomorphismus von $G_1$ nach $G_2$.
+  Da $G_1$ endlich ist, gilt $\# (G_1 \/ ker(f)) divides \# G_1$. 
+  Da $\# G_1$ eine Primzahl ist, ist $\# (G_1 \/ ker(f))$ entweder 1 oder $\# G_1$. \
+  Wenn $\# (G_1 \/ ker(f)) = 1$, dann ist $f$ der triviale Gruppenhomomorphismus.\
+  Zu zeigen: Wenn $\# (G_1 \/ ker(f)) = \# G_1$, dann ist f injektiv:\
+  
+  Im Beweis oben haben wir bereits aus dem Homomorphiesatz hergeleitet, dass $\#(G_1 \/ ker(f)) = \# im(f)$. Wir haben also $\# im(f) = \# G_1$. \
+  Wir wissen, dass auf endlichen Mengen gleicher Mächtigkeit Surjektivität und Injektivität equivalent sind. Da $f|_(im(f)) : G_1 -> im(f)$ surjektiv ist, und $\# G_1 = \# im(f)$ wissen wir, dass $f|_(im(f))$ injektiv ist.
+  Da wir $f_(im(f))$ nur auf das eigene Bild beschränkt haben, folgt, dass $f$ injektiv ist.
 ]
