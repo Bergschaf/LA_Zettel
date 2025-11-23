@@ -125,7 +125,7 @@ $ =>"Bild"(f)= {emptyset,[0,1]} $
 b)
 
 $
-  "Kern"(g compose f)= {a in G_(1)|g(f(a)) = e_(3)}={a in G_(1)|f(a) = b in G_(2) and g(b)=e_(3)}= f^(-1)("Kern"(g)) inter "Bild"(f))
+  "Kern"(g compose f)= {a in G_(1)|g(f(a)) = e_(3)}={a in G_(1)|f(a) = b in G_(2) and g(b)=e_(3)}= f^(-1)("Kern"(g))
 $
 $ "Bild"(g compose f)={g(a)|exists x in G_(1):a = f(x)} = g("Bild"(f)) $
 = Aufgabe 6.3
