@@ -60,8 +60,16 @@ TODOTODOTODOTDOTODOTODO
     Zu zeigen: $r dot m_i in M_0 quad forall m_i in M_0$
     + $m_i in E => r dot m_i in R E $
     + $ m_i in -E => exists e in E, m_i = (-e), quad r dot  m_i = r dot (-e) = -r dot e in R E quad "da " -r in R $ 
-    + $m_i in R E => exists r in R, exists e in E, m_i = r dot e $
-
+    + $ m_i in R E => exists r_1 in R, exists e in E, r dot m_i = r dot (r_1 dot e) = (r dot r_1) dot e in R E quad "da " r dot r_1 R $
+    + $ m_i in E R => exists r_1 in R, exists e in E, r dot m_i = r dot (e dot _r_1) = r dot e dot r_1 in R E R quad "da " r, r_1 in R $
+    + $m_i in R E R => exists r_1, r_2 in R, exists e in E, r dot m_i = r dot (r_1 dot e dot r_2) = (r dot r_1) dot e dot r_2 in R E R $ 
+  Da $E subset.eq M$ trivial ist, wissen wir nun, dass M ein Ideal in R mit $E subset.eq M$ ist, d.h. nach der Definition eines erzeugten Integrals gilt $(E) subset.eq M$
+  #line()
+  Zu zeigen: $M subset.eq (E)$ d.h. $forall a_i in M_0, sum_i^n a_i in (E)$.
+  Da $(E)$ unter endlicher Addition abgeschlossen sein muss, genügt es zu zeigen, dass alle $a_i in M_0$ in $(E)$ enthalten sind.
+  + $a_i in E => "trivial"$
+  + $a_i in -E => a_i in E quad "da " (E) "unter additiver inversbildung abgeschlossen sein muss"$
+  + $a_i in R E ... $
 ]
 
 == Aufgabe 5
