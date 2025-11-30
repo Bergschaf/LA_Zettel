@@ -101,7 +101,24 @@ Sei $(R, + , dot)$ ein unitärer, kommutativer Ring.
 #proof[
   "$=>$" $(R,+,dot)$ ist ein Körper.
   Ein Ideal $I$ muss die Bedingung $R I = I$ erfüllen. 
-  Da $R$ ein Körper ist (alle multiplikativen Inversen existieren) gilt $I^(-1) subset.eq R$. 
+  $I$ kann nun entweder das Nullideal $I = {0}$ oder das Ideal des ganzen Körpers $I = R$ sein. 
+  Zu zeigen: $ R I = I => I = {0} or I = R $
+  Entweder gilt, $I \# < 1$, dann gilt $I = {0}$. \
+  Sei im folgenden $\# I > 0$.  
+  Zu zeigen $R I = R$. Dafür genügt es zu zeigen $R I supset.eq R$, also 
+  $ r in R => exists r_1 in R, i in I, r_1 dot i = r $ 
+  Sei $r_1 = i^(-1) dot r$ (Multiplikatives Invers existiert in dem Körper). \
+  Es gilt $r_1 dot i = i^(-1) dot r dot i = r$. \
+  #line()
+  "$arrow.double.l$"\
+  Wenn $(R, +, dot)$ nur die zwei trivialen Ideale hat, dann folgt 
+  $ (r) = R or (r) = (0)  quad forall r in R " mit" r eq.not 0 $
+  $(r) = (0)$ ist aber nicht möglich, da $r in.not (0) quad forall r in R "mit" r eq.not 0$.
+  Es gilt also:
+
+  $ (1) = (r) = R quad forall r in R $
+  Zu zeigen ist: Für jedes $r in R$ existiert ein Multiplikatives Inverses $r^(-1)$ mit $r dot r^(-1) = r^(-1) dot r = 1 $. \
+  Da $(1) = (r)$ gilt, wissen wir $exists r_1 in R, r_1 dot r = 1$, was für jedes $r$ ein Multiplikatives Invers erzeugt.
 
 ]
 
