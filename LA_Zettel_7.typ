@@ -56,8 +56,65 @@ Das ist ein Wiederspruch. Es handelt sich also um keinen Ring
 
 == Aufgabe 2
 
+=== b)
+#proof[
+
+  *$ (i)=> (i i): $*
+  $ (i): forall a in R: a != 0_R => a dot b != 0_R $
+  $ f: R in.rev a |-> a dot b in R $
+  $ "Kern"(f) = {a|a dot b = 0_R} = {0_R} $
+  $ I: R \/ {0_R}-> "Bild"(f) $
+  $ a+"Kern"(f) = [a] |-> f(a) $
+  Homomorphiesatz für Ringe
+  $=>I$ ist ein Isomorphismus
+  $ pi: R in.rev a-> [a] in R\/{0_R} $
+  Da $ R \/{0_R} = {a+0_R = [a] a in R} = {a = [a]| a in R} $
+  ist $pi$ injektiv.
+  Es gilt außerden, das:
+  $ f = I compose pi $
+  Da $I,pi$ injektiv  $=> f$ injektiv
+
+  *$ (i i) => (i i i) $*
+  $ (i i): (forall a,c in R: f(a) = f(c)=> a = c) $
+  $ <=> (forall a,c in R: a dot b = c dot b => a = c) $
+
+  *$ (i i i)=> (i) $*
+  $ (i i i):(forall a,b in R: a dot b = c dot b => a = c) $
+  Es gilt außerdem $0_R dot b = 0_R$
+  $ "Sei" a dot b = 0_R = 0_R dot b => a = 0_R $
+  $=>$ b ist kein Rechtsnullteiler
+
+  *$=> ((i)=> (i i)=> (i i i)=> (i)) => "Ringschluss"$*
+
+]
+
 
 == Aufgabe 3
+=== b)
+#lemma[
+
+  Seien $(R_1,+_1,dot_1)$ und $(R_2,+_2,dot_2)$ Ringe mit den Nullelementen $0_(R_1)$ bzw. $0_(R_2)$ und $f: R_(1)-> R_(2)$ ein Homomorphismus, dann gilt
+  - (i): $f$ ist injektiv
+  - (ii): $"Kern"(f) = {0_(R_1)}$
+  - (iii): Die einzige Lösung der Gleichung $f(a) = 0_(R_2)$ ist $a = 0_(R_1)$
+]
+#proof[
+
+  *(i)$=>$(ii)*
+  $ (i): (forall a,b in R_1: f(a)= f(b) => a = b) $
+  $ forall a_(n) in R_1: f(a_(n))= f(a_(n)+_1 0_(R_1)) = f(a_(n))+_2 f(0_(R_1)) $
+  Da wir $+_2$ Kürzen dürfen
+  $ iff 0_(R_2) = f(0_(R_1)) $
+  $ => 0_(R_1) in "Kern"(f) $
+
+  $=> forall b in R_1 "mit" f(b) = 0_(R_2) =>f(b)= f(0_(R_1)) => b = 0_(R_1)$
+  $ => "Kern"(f) = {0_(R_(1))} $
+  *(ii)$=>$(iii)*
+  $ (i i): "Kern"(f) = {0_(R_1)}= {a in R_1| f(a) = 0_(R_2)} $
+  $ => forall a in R_1 "mit" f(a)=0_(R_2) => a in "Kern"(f) => a = 0_(R_1) $
+  *(iii)$=>$(i)*
+
+]
 
 == Aufgabe 4
 
@@ -73,7 +130,7 @@ a)
   $ a b = 0_K $
   $ a b = a 0_K $
   $ iff a^(-1) dot a dot b = a^(-1) dot a dot 0_K $
-  $ iff b = 0 $
+  $ iff b = 0_K $
   Das ist ein Wiederspruch
   $=>$ Jeder Körper ist Nullteilerfrei
 
@@ -183,4 +240,3 @@ Wir beweisen zunächst einige Hilfslemmas. Zur besseren lesbarkeit wird verwendt
   Das Wiederspricht den Rechenregeln in einem Körper
 
 ]
-
