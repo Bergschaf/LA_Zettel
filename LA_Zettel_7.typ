@@ -8,13 +8,13 @@ Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor
 $(ZZ_3,+_3,dot_2)$
 Da $3$ eine Primzahl ist, ist nach script $(ZZ_3,+_3,dot_3)$ ein Körper.
 ==== Bestimme Charakteristik
-$ underbrace((1+1))_(2)+1 = 0 => "char"(ZZ_3,+_3,dot_3)= 3 $
+$ underbrace((1+1), 2)+1 = 0 => "char"(ZZ_3,+_3,dot_3)= 3 $
 ==== Nullteilerfreiheit
 $ZZ_3 = {0,1,2}$
-$0*x = 0 forall x in ZZ_3$
-$1*2 = 2*1 = 2$
-$2*2 = 1$
-$1*1 = 1$
+$ 0*x = 0 forall x in ZZ_3 $
+$ 1*2 = 2*1 = 2 $
+$ 2*2 = 1 $
+$ 1*1 = 1 $
 $=> "Nullteilerfreiheit"$
 
 === (ii)
@@ -93,7 +93,7 @@ Das ist ein Wiederspruch. Es handelt sich also um keinen Ring
 === b)
 #lemma[
 
-  Seien $(R_1,+_1,dot_1)$ und $(R_2,+_2,dot_2)$ Ringe mit den Nullelementen $0_(R_1)$ bzw. $0_(R_2)$ und $f: R_(1)-> R_(2)$ ein Homomorphismus, dann gilt
+  Seien $(R_1,+_1,dot_1)$ und $(R_2,+_2,dot_2)$ Ringe mit den Nullelementen $0_(R_1)$ bzw. $0_(R_2)$ und $f: R_(1)-> R_(2)$ ein Homomorphismus, dann gilt die Äquivalenz foldender Aussagen:
   - (i): $f$ ist injektiv
   - (ii): $"Kern"(f) = {0_(R_1)}$
   - (iii): Die einzige Lösung der Gleichung $f(a) = 0_(R_2)$ ist $a = 0_(R_1)$
@@ -114,7 +114,58 @@ Das ist ein Wiederspruch. Es handelt sich also um keinen Ring
   $ => forall a in R_1 "mit" f(a)=0_(R_2) => a in "Kern"(f) => a = 0_(R_1) $
   *(iii)$=>$(i)*
 
+  $ (i i i): f(a) = 0_R_2 => a = 0_R_1 $
+  Sei $c,d in R_(1)$ und $f(c) = f(d)$
+  $ => 0_R_2 = f(c)-f(d) $
+  $ => f(c-d) = 0_R_2 $
+  $ => c-d = 0_R_1 $
+  $ => c = d $
+
+
+  *$ => ((i)=>(i i)=>(i i i)=>(i))=>((i)iff(i i)iff(i i i)) $*
 ]
+=== c)
+#lemma[
+
+  Es sei $(R,+,dot)$ ein Ring mit Eins und $"char"(R) = 0$, dann enthält $R$ einen Unterring, der isomorph zu $ZZ$ ist.
+
+]
+#proof[
+
+
+  $ f: ZZ in.rev n -> cases(0_R "falls" n = 0, n 1 "falls" n >0, |n|(-1_R) "falls" n <0) in R $
+  $ a in ZZ $
+
+  $ a >0 : f(-a)= a(-1_R)= underbrace((-1_R-...-1_R), a "mal") = -underbrace((1+..+1), a "mal") = -(a 1_R) $
+  In folgendem nutze wir : $-(a 1_R)hat(=)-a 1_R = underbrace((1+...+1), -a "mal")$
+
+
+  $a,b in ZZ$
+
+
+  $
+    f(a)+f(b) = a 1_R + b 1_R = underbrace((1_R+...+1_R), a "mal")+underbrace((1_R+...+1_R), b "mal") = (a+b)1_R=f(a+b)
+  $
+  $
+    f(a)dot f(b)= underbrace((1_R+...+1_R), a "mal")dot underbrace((1_R+...+1_R), b "mal") = underbrace((b 1+ ...+b 1), a "mal") = (a dot b )1_R =f(a dot b)
+  $
+  $ =>f "ist Homomorphismus" $
+  Als nächstes zeigen wir, das $f$ injektiv ist:
+  $ "Sei" f(a) = f(b) => a 1_R = b 1_R $
+  $=>(a-b)1_R= 0_R=>a-b = "char"(R)=0=>a = b$
+
+  Schränken wir R auf das Bild von $f$ ein, so bekommen wir den Isomorphismus:
+  $ g: ZZ in.rev n -> cases(0_R "falls" n = 0, n 1 "falls" n >0, |n|(-1_R) "falls" n <0) in "Bild"(f) $
+
+  Es bleibt zu zeigen, das das Bild von $f$ ein Unterring von $R$ ist:
+  $ forall a,b in ZZ: $
+  $"Es gilt: "a - b in ZZ$und $a dot b in ZZ$ und $0_R in "Bild"(f)=>"Bild"(f)!=emptyset$
+  $ g(a)-g(b)=g(a)+g(-b) = g(underbrace(a-b, in ZZ)) in "Bild"(g)="Bild"(f) $
+  $ g(a)dot g(b) = g(a dot b) in "Bild"(f) $
+  $=>ZZ$ ist isomorph zum Bild($f$), welcher ein Unterring von $R$ ist.
+]
+
+
 
 == Aufgabe 4
 
