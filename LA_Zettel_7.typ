@@ -68,8 +68,41 @@ TODOTODOTODOTDOTODOTODO
   Zu zeigen: $M subset.eq (E)$ d.h. $forall a_i in M_0, sum_i^n a_i in (E)$.
   Da $(E)$ unter endlicher Addition abgeschlossen sein muss, genügt es zu zeigen, dass alle $a_i in M_0$ in $(E)$ enthalten sind.
   + $a_i in E => "trivial"$
-  + $a_i in -E => a_i in E quad "da " (E) "unter additiver inversbildung abgeschlossen sein muss"$
-  + $a_i in R E ... $
+  + $a_i in -E => a_i in (E) quad "da " (E) "unter additiver inversbildung abgeschlossen sein muss"$
+  + $a_i in R E, exists r_1 in R, exists e in E, a_i = r dot e in (E) quad "folgt aus kriterium für ideale" $
+  + $a_i in E R, exists r_1 in R, exists e in E, a_i = e dot r in (E) quad "folgt aus kriterium für ideale" $
+  + $ quad  a_i in R E R, exists r_1, r_2 in R, exists in E, a_i = r dot e dot r in (E) quad "folgt aus kriterium für ideale (zweimal)" $
+  #line()
+  Da wir nun beide Richtungen der Inklusion gezeigt haben folgt: $(E) = M$
+]
+  In einem Ring mit 1 gilt:
+  
+  $ E union -E union R E union E R union R E R = R E R $ 
+da 
+  + $E = 1 dot E dot 1$
+  + $-E = -1 dot E dot 1$
+  + $ R E = R dot E dot 1$
+  + $ E R = 1 dot E dot R$
+  + $ R E R$ ist sowieso enthalten
+
+In einem kommutativen Ring gilt:
+$ E union -E union R E union E R union R E R = E union -E union R E $
++ $E$, $-E$ und $R E$ sind sowieso enthalten.
++ $E R = R E$
++ $R E R = R R E = R E$
+
+=== c)
+Sei $(R, + , dot)$ ein unitärer, kommutativer Ring.
+#lemma[
+  Folgende Aussagen sind equivalent:
+  + $(R, +, dot)$ ist ein Körper
+  + $(R, +, dot)$ hat genau die trivialen Ideale (die übereinstimmen)
+]
+#proof[
+  "$=>$" $(R,+,dot)$ ist ein Körper.
+  Ein Ideal $I$ muss die Bedingung $R I = I$ erfüllen. 
+  Da $R$ ein Körper ist (alle multiplikativen Inversen existieren) gilt $I^(-1) subset.eq R$. 
+
 ]
 
 == Aufgabe 5
