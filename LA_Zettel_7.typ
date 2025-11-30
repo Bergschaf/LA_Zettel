@@ -22,10 +22,46 @@ Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor
 ]
 === ii)
 #proof[
-  1. Sei $A subset X, A!=emptyset$, dann gilt:
-  $ A inter A = emptyset $
+  1. Sei $A,B subset X, A,B!=emptyset,A "und" B$ sind disjunkt, dann gilt:
+  $ A inter B = emptyset $
+  $=>(pset(X),triangle,inter)$ ist nicht nullteilerfrei und somit kein Integritätsring.
 ]
-== Aufgabe
+== Aufgabe 3
+Es seien $(R_1,+_1,dot_1),(R_2,+_2,dot_2)$ Ringe und $f: R_1 -> R_2$ ein Homomorphisums.
+=== i)
+#lemma[
+  $"Bild"(f)$ ist ein Unterring von $(R_2,+_2,dot_2).$
+]Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Bild"(f) != emptyset$, weil:
+  $ f(0_R_1)= 0_R_2 => 0_R_2 in "Bild"(f) $
+  2. $ a_2,b_2 in "Bild"(f) and a_1,b_1 in R_1: $
+  $ a_2 +_2 (-b_2)= f(a_1) +_2 (-f(b_1)) $
+  $ = f(a_1) +_2 f(-b_1) $
+  $ = f(a_1 +_1 (-b_1)) in "Bild"(f) $
+  3. $ a_2 dot_2 b_2^(-1)= f(a_1) dot_2 (f(b_1))^(-1) $
+  $ = f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1 dot_1 b_1^(-1)) in "Bild"(f) $
+]
+=== ii)
+#lemma[
+  $"Kern"(f)$ ist ein Unterring von $(R_1,+_1,dot_1)$.
+]
+Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Kern"(f)!=emptyset$, weil:
+  $ f(0_R_1)=0_R_2 => 0_R_1 in "Kern"(f) $
+  2. $ a_1,b_1 in "Kern"(f): $
+  $ f(a_1 +_1 (-b_1))= f(a_1) +_2 f(-b_1) $
+  $ = f(a_1)+_2 (-f(b_1)) $
+  $ = 0_R_2 +_2 (-0_R_2) $
+  $ = 0_R_2 in "Kern"(f) $
+  3.
+  $ f(a_1 dot_1 b_1^(-1))= f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1)dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 in "Kern"(f) $
+]
 
 == Aufgabe 4
 === a)
