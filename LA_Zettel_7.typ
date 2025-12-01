@@ -4,65 +4,7 @@
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke (Mi 16:15))
 
 == Aufgabe 1
-
-== Aufgabe 2
 === a)
-#lemma[
-  $(ZZ_3,+_3,dot_3)$ ist ein Integritätsring, $(pset(X), triangle, inter)$ aber nicht.
-]
-=== i)
-#proof[
-  1. $(ZZ_3,dot_3)$ hat nur 3 Elemente und muss daher abelsch sein.
-  2. $(ZZ_3,+_3,dot_3)$ ist ein Ring mit Eins, denn:
-  $ forall x in ZZ_3: 1 dot_3 x = x $
-  3. $(ZZ_3,+_3,dot_3)$ ist nullteilerfrei, denn:
-  $ 1 dot_3 1 =1 !=0 $
-  $ 1 dot_3 2 !=0 $
-  $ 2 dot_3 2!=0 $
-]
-=== ii)
-#proof[
-  1. Sei $A,B subset X, A,B!=emptyset,A "und" B$ sind disjunkt, dann gilt:
-  $ A inter B = emptyset $
-  $=>(pset(X),triangle,inter)$ ist nicht nullteilerfrei und somit kein Integritätsring.
-]
-== Aufgabe 3
-Es seien $(R_1,+_1,dot_1),(R_2,+_2,dot_2)$ Ringe und $f: R_1 -> R_2$ ein Homomorphisums.
-=== i)
-#lemma[
-  $"Bild"(f)$ ist ein Unterring von $(R_2,+_2,dot_2).$
-]Beweis durch das Unterringkriterium:
-#proof[
-  1. $"Bild"(f) != emptyset$, weil:
-  $ f(0_R_1)= 0_R_2 => 0_R_2 in "Bild"(f) $
-  2. $ a_2,b_2 in "Bild"(f) and a_1,b_1 in R_1: $
-  $ a_2 +_2 (-b_2)= f(a_1) +_2 (-f(b_1)) $
-  $ = f(a_1) +_2 f(-b_1) $
-  $ = f(a_1 +_1 (-b_1)) in "Bild"(f) $
-  3. $ a_2 dot_2 b_2^(-1)= f(a_1) dot_2 (f(b_1))^(-1) $
-  $ = f(a_1) dot_2 f(b_1^(-1)) $
-  $ = f(a_1 dot_1 b_1^(-1)) in "Bild"(f) $
-]
-=== ii)
-#lemma[
-  $"Kern"(f)$ ist ein Unterring von $(R_1,+_1,dot_1)$.
-]
-Beweis durch das Unterringkriterium:
-#proof[
-  1. $"Kern"(f)!=emptyset$, weil:
-  $ f(0_R_1)=0_R_2 => 0_R_1 in "Kern"(f) $
-  2. $ a_1,b_1 in "Kern"(f): $
-  $ f(a_1 +_1 (-b_1))= f(a_1) +_2 f(-b_1) $
-  $ = f(a_1)+_2 (-f(b_1)) $
-  $ = 0_R_2 +_2 (-0_R_2) $
-  $ = 0_R_2 in "Kern"(f) $
-  3.
-  $ f(a_1 dot_1 b_1^(-1))= f(a_1) dot_2 f(b_1^(-1)) $
-  $ = f(a_1)dot_2 f(b_1^(-1)) $
-  $ = 0_R_2 dot_2 f(b_1^(-1)) $
-  $ = 0_R_2 in "Kern"(f) $
-]
-
 (i)
 $(ZZ_3,+_3,dot_2)$
 Da $3$ eine Primzahl ist, ist nach script $(ZZ_3,+_3,dot_3)$ ein Körper.
@@ -112,43 +54,87 @@ Wähle $f_1 = f_2 = f_3 : RR in.rev x |-> 1 in QQ:$
 $ f_(1)(f_(2)(x_(2))+f_(3)(x_(3)))!=f_(1)(f_(2)(x_(2)))+f_(1)(f_(3)(x_(3))) $
 $ 1 != 1+1 $
 Das ist ein Wiederspruch. Es handelt sich also um keinen Ring
-
-== Aufgabe 2
-
 === b)
+#lemma[
+
+  Es sei $(R,+, dot)$ ein Ring und $a dot a$ für alle $a in R$. Dann ist $(r,+, dot)$ kommutativ.
+
+]
 #proof[
 
-  *$ (i)=> (i i): $*
-  $ (i): forall a in R: a != 0_R => a dot b != 0_R $
-  $ f: R in.rev a |-> a dot b in R $
-  $ "Kern"(f) = {a|a dot b = 0_R} = {0_R} $
-  $ I: R \/ {0_R}-> "Bild"(f) $
-  $ a+"Kern"(f) = [a] |-> f(a) $
-  Homomorphiesatz für Ringe
-  $=>I$ ist ein Isomorphismus
-  $ pi: R in.rev a-> [a] in R\/{0_R} $
-  Da $ R \/{0_R} = {a+0_R = [a] a in R} = {a = [a]| a in R} $
-  ist $pi$ injektiv.
-  Es gilt außerden, das:
-  $ f = I compose pi $
-  Da $I,pi$ injektiv  $=> f$ injektiv
-
-  *$ (i i) => (i i i) $*
-  $ (i i): (forall a,c in R: f(a) = f(c)=> a = c) $
-  $ <=> (forall a,c in R: a dot b = c dot b => a = c) $
-
-  *$ (i i i)=> (i) $*
-  $ (i i i):(forall a,b in R: a dot b = c dot b => a = c) $
-  Es gilt außerdem $0_R dot b = 0_R$
-  $ "Sei" a dot b = 0_R = 0_R dot b => a = 0_R $
-  $=>$ b ist kein Rechtsnullteiler
-
-  *$=> ((i)=> (i i)=> (i i i)=> (i)) => "Ringschluss"$*
-
+  $ (a+b) $
+  $ = (a+b) dot (a+b) $
+  $ = (a+b)dot a + (a+b) dot b $
+  $= a dot a + b dot a +a dot b + b dot b$
+  $ => a+b = b + b dot a + a dot b +a $
+  $ =>0 = b dot a + a dot b $
+  $ => forall c in R: c + c = c dot c + c dot c = 0 $
+  $ =>forall a,b in R: a dot b + a dot b = 0 =b dot a + a dot b $
+  $ =>a dot b = b dot a $
 ]
 
 
+
+== Aufgabe 2
+=== a)
+#lemma[
+  $(ZZ_3,+_3,dot_3)$ ist ein Integritätsring, $(pset(X), triangle, inter)$ aber nicht.
+]
+=== i)
+#proof[
+  1. $(ZZ_3,dot_3)$ hat nur 3 Elemente und muss daher abelsch sein.
+  2. $(ZZ_3,+_3,dot_3)$ ist ein Ring mit Eins, denn:
+  $ forall x in ZZ_3: 1 dot_3 x = x $
+  3. $(ZZ_3,+_3,dot_3)$ ist nullteilerfrei, denn:
+  $ 1 dot_3 1 =1 !=0 $
+  $ 1 dot_3 2 !=0 $
+  $ 2 dot_3 2!=0 $
+]
+=== ii)
+#proof[
+  1. Sei $A,B subset X, A,B!=emptyset,A "und" B$ sind disjunkt, dann gilt:
+  $ A inter B = emptyset $
+  $=>(pset(X),triangle,inter)$ ist nicht nullteilerfrei und somit kein Integritätsring.
+]
+
 == Aufgabe 3
+=== a)
+Es seien $(R_1,+_1,dot_1),(R_2,+_2,dot_2)$ Ringe und $f: R_1 -> R_2$ ein Homomorphisums.
+=== i)
+#lemma[
+  $"Bild"(f)$ ist ein Unterring von $(R_2,+_2,dot_2).$
+]Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Bild"(f) != emptyset$, weil:
+  $ f(0_R_1)= 0_R_2 => 0_R_2 in "Bild"(f) $
+  2. $ a_2,b_2 in "Bild"(f) and a_1,b_1 in R_1: $
+  $ a_2 +_2 (-b_2)= f(a_1) +_2 (-f(b_1)) $
+  $ = f(a_1) +_2 f(-b_1) $
+  $ = f(a_1 +_1 (-b_1)) in "Bild"(f) $
+  3. $ a_2 dot_2 b_2^(-1)= f(a_1) dot_2 (f(b_1))^(-1) $
+  $ = f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1 dot_1 b_1^(-1)) in "Bild"(f) $
+]
+=== ii)
+#lemma[
+  $"Kern"(f)$ ist ein Unterring von $(R_1,+_1,dot_1)$.
+]
+Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Kern"(f)!=emptyset$, weil:
+  $ f(0_R_1)=0_R_2 => 0_R_1 in "Kern"(f) $
+  2. $ a_1,b_1 in "Kern"(f): $
+  $ f(a_1 +_1 (-b_1))= f(a_1) +_2 f(-b_1) $
+  $ = f(a_1)+_2 (-f(b_1)) $
+  $ = 0_R_2 +_2 (-0_R_2) $
+  $ = 0_R_2 in "Kern"(f) $
+  3.
+  $ f(a_1 dot_1 b_1^(-1))= f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1)dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 in "Kern"(f) $
+]
+
 === b)
 #lemma[
 
@@ -234,15 +220,15 @@ $NN$ bildet kein Ideal in $(ZZ, +, dot)$, da $NN$ kein Unterring ist (nicht unte
 ==== ii)
 $2ZZ = {2k | k in ZZ}$
 #lemma[
-Die ganzen geraden Zahlen $2ZZ$ bilden ein Ideal in $(ZZ, +, dot)$. ]
+  Die ganzen geraden Zahlen $2ZZ$ bilden ein Ideal in $(ZZ, +, dot)$. ]
 #proof[
   Die ganzen geraden Zahlen sind ein Unterring von $(ZZ, +, dot)$:\
   Zu zeigen:
-  $ a - b in 2ZZ, forall a, b in 2ZZ$. Gilt, da $exists k_a in ZZ, a = 2k, forall a in 2ZZ$.
+  $a - b in 2ZZ, forall a, b in 2ZZ$. Gilt, da $exists k_a in ZZ, a = 2k, forall a in 2ZZ$.
   $ 2k_a - 2k_b = 2(k_a-k_b) in 2ZZ $
   Zu zeigen: $a dot b in 2ZZ, forall a,b in 2ZZ$. Gilt, da
-   $ 2k_a dot 2k_b = 2 dot (2 dot k_a dot k_b) in 2ZZ $
-  Zu zeigen: $z dot a in 2ZZ and a dot z in 2ZZ, forall a in 2ZZ, z in ZZ$ 
+  $ 2k_a dot 2k_b = 2 dot (2 dot k_a dot k_b) in 2ZZ $
+  Zu zeigen: $z dot a in 2ZZ and a dot z in 2ZZ, forall a in 2ZZ, z in ZZ$
   $ z dot a = z dot 2 k_a = 2 (z dot k_a) in 2ZZ $
   $ a dot z = 2 k_a dot z = 2(k_a dot z) in 2ZZ $
 ]
@@ -253,54 +239,67 @@ TODOTODOTODOTDOTODOTODO
 
 #lemma[
   Es sei $(R, +, dot)$ ein Ring und $E subset.eq R$.
-  $ (E) = {sum_i^n a_i | exists n in NN_0, forall i = 1, dots, n quad (a_i  in E union -E union R E union E R union R E R)} = M $ (Wir nennen die Menge rechts ab sofort M). Sei außerdem $M_0 = E union -E union R E union E R union R E R$.
+  $ (E) = {sum_i^n a_i | exists n in NN_0, forall i = 1, dots, n quad (a_i in E union -E union R E union E R union R E R)} = M $ (Wir nennen die Menge rechts ab sofort M). Sei außerdem $M_0 = E union -E union R E union E R union R E R$.
 ]
 #proof[
-  1. Zu zeigen $ (E) subset.eq M$. Es genügt zu zeigen, dass $M$ ein Ideal in $R$ ist und $E subset.eq M$.
-  Zu zeigen: $a - b in M, forall a, b in M$. 
-  $ a - b = (sum_i^n a_i) - (sum_j^m b_j) \ 
-  = (sum_i^n a_i) + (sum_j^m -b_j) \
-  "Sei " a_(i+n) = -b_j quad forall j in [|1,m|] \
-  = sum_i^(n + m) a_i
+  1. Zu zeigen $(E) subset.eq M$. Es genügt zu zeigen, dass $M$ ein Ideal in $R$ ist und $E subset.eq M$.
+  Zu zeigen: $a - b in M, forall a, b in M$.
   $
-  Zu zeigen: $-b_j in M_0 quad forall b_j in M_0 $
-    + $b_j in E => -b_j in -E$ 
-    + $b_j in -E => -b_j in E$
-    + $ b_j in R E => exists r in R, exists e in E, b_j = r dot e \
-        -b_j = -(r dot e) = -r dot e in R E quad "da " -r in R  $
-    + $ b_j in E R => exists r in R, exists e in E, b_j = e dot r \
-        -b_j = -(e dot r) = e dot (-r) in R quad "da " -r in R $
-    + $ b_j in R E R => exists r_1, r_2 in R, exists e in E, b_j = r_1 dot e dot r_2 \
-      -b_j = -(r_1 dot e dot r_2) = -r_1 dot e dot r_2 in R quad "da " -r_1 in R $
+    a - b = (sum_i^n a_i) - (sum_j^m b_j) \
+    = (sum_i^n a_i) + (sum_j^m -b_j) \
+    "Sei " a_(i+n) = -b_j quad forall j in [|1,m|] \
+    = sum_i^(n + m) a_i
+  $
+  Zu zeigen: $-b_j in M_0 quad forall b_j in M_0$
+  + $b_j in E => -b_j in -E$
+  + $b_j in -E => -b_j in E$
+  + $
+      b_j in R E => exists r in R, exists e in E, b_j = r dot e \
+      -b_j = -(r dot e) = -r dot e in R E quad "da " -r in R
+    $
+  + $
+      b_j in E R => exists r in R, exists e in E, b_j = e dot r \
+      -b_j = -(e dot r) = e dot (-r) in R quad "da " -r in R
+    $
+  + $
+      b_j in R E R => exists r_1, r_2 in R, exists e in E, b_j = r_1 dot e dot r_2 \
+      -b_j = -(r_1 dot e dot r_2) = -r_1 dot e dot r_2 in R quad "da " -r_1 in R
+    $
   Zu zeigen: $r dot m in M and m dot r in M quad forall m in M forall r in R$.
-    $ r dot m = r dot (sum_i^n m_i) = sum_i^n r dot m_i $
-    Zu zeigen: $r dot m_i in M_0 quad forall m_i in M_0$
-    + $m_i in E => r dot m_i in R E $
-    + $ m_i in -E => exists e in E, m_i = (-e), quad r dot  m_i = r dot (-e) = -r dot e in R E quad "da " -r in R $ 
-    + $ m_i in R E => exists r_1 in R, exists e in E, r dot m_i = r dot (r_1 dot e) = (r dot r_1) dot e in R E quad "da " r dot r_1 R $
-    + $ m_i in E R => exists r_1 in R, exists e in E, r dot m_i = r dot (e dot _r_1) = r dot e dot r_1 in R E R quad "da " r, r_1 in R $
-    + $m_i in R E R => exists r_1, r_2 in R, exists e in E, r dot m_i = r dot (r_1 dot e dot r_2) = (r dot r_1) dot e dot r_2 in R E R $ 
+  $ r dot m = r dot (sum_i^n m_i) = sum_i^n r dot m_i $
+  Zu zeigen: $r dot m_i in M_0 quad forall m_i in M_0$
+  + $m_i in E => r dot m_i in R E$
+  + $ m_i in -E => exists e in E, m_i = (-e), quad r dot m_i = r dot (-e) = -r dot e in R E quad "da " -r in R $
+  + $
+      m_i in R E => exists r_1 in R, exists e in E, r dot m_i = r dot (r_1 dot e) = (r dot r_1) dot e in R E quad "da " r dot r_1 R
+    $
+  + $
+      m_i in E R => exists r_1 in R, exists e in E, r dot m_i = r dot (e dot_r_1) = r dot e dot r_1 in R E R quad "da " r, r_1 in R
+    $
+  + $m_i in R E R => exists r_1, r_2 in R, exists e in E, r dot m_i = r dot (r_1 dot e dot r_2) = (r dot r_1) dot e dot r_2 in R E R$
   Da $E subset.eq M$ trivial ist, wissen wir nun, dass M ein Ideal in R mit $E subset.eq M$ ist, d.h. nach der Definition eines erzeugten Integrals gilt $(E) subset.eq M$
   #line()
   Zu zeigen: $M subset.eq (E)$ d.h. $forall a_i in M_0, sum_i^n a_i in (E)$.
   Da $(E)$ unter endlicher Addition abgeschlossen sein muss, genügt es zu zeigen, dass alle $a_i in M_0$ in $(E)$ enthalten sind.
   + $a_i in E => "trivial"$
   + $a_i in -E => a_i in (E) quad "da " (E) "unter additiver inversbildung abgeschlossen sein muss"$
-  + $a_i in R E, exists r_1 in R, exists e in E, a_i = r dot e in (E) quad "folgt aus kriterium für ideale" $
-  + $a_i in E R, exists r_1 in R, exists e in E, a_i = e dot r in (E) quad "folgt aus kriterium für ideale" $
-  + $ quad  a_i in R E R, exists r_1, r_2 in R, exists in E, a_i = r dot e dot r in (E) quad "folgt aus kriterium für ideale (zweimal)" $
+  + $a_i in R E, exists r_1 in R, exists e in E, a_i = r dot e in (E) quad "folgt aus kriterium für ideale"$
+  + $a_i in E R, exists r_1 in R, exists e in E, a_i = e dot r in (E) quad "folgt aus kriterium für ideale"$
+  + $
+      quad a_i in R E R, exists r_1, r_2 in R, exists in E, a_i = r dot e dot r in (E) quad "folgt aus kriterium für ideale (zweimal)"
+    $
   #line()
   Da wir nun beide Richtungen der Inklusion gezeigt haben folgt: $(E) = M$
 ]
-  In einem Ring mit 1 gilt:
-  
-  $ E union -E union R E union E R union R E R = R E R $ 
-da 
-  + $E = 1 dot E dot 1$
-  + $-E = -1 dot E dot 1$
-  + $ R E = R dot E dot 1$
-  + $ E R = 1 dot E dot R$
-  + $ R E R$ ist sowieso enthalten
+In einem Ring mit 1 gilt:
+
+$ E union -E union R E union E R union R E R = R E R $
+da
++ $E = 1 dot E dot 1$
++ $-E = -1 dot E dot 1$
++ $R E = R dot E dot 1$
++ $E R = 1 dot E dot R$
++ $R E R$ ist sowieso enthalten
 
 In einem kommutativen Ring gilt:
 $ E union -E union R E union E R union R E R = E union -E union R E $
@@ -317,24 +316,24 @@ Sei $(R, + , dot)$ ein unitärer, kommutativer Ring.
 ]
 #proof[
   "$=>$" $(R,+,dot)$ ist ein Körper.
-  Ein Ideal $I$ muss die Bedingung $R I = I$ erfüllen. 
-  $I$ kann nun entweder das Nullideal $I = {0}$ oder das Ideal des ganzen Körpers $I = R$ sein. 
+  Ein Ideal $I$ muss die Bedingung $R I = I$ erfüllen.
+  $I$ kann nun entweder das Nullideal $I = {0}$ oder das Ideal des ganzen Körpers $I = R$ sein.
   Zu zeigen: $ R I = I => I = {0} or I = R $
   Entweder gilt, $I \# < 1$, dann gilt $I = {0}$. \
-  Sei im folgenden $\# I > 0$.  
-  Zu zeigen $R I = R$. Dafür genügt es zu zeigen $R I supset.eq R$, also 
-  $ r in R => exists r_1 in R, i in I, r_1 dot i = r $ 
+  Sei im folgenden $\# I > 0$.
+  Zu zeigen $R I = R$. Dafür genügt es zu zeigen $R I supset.eq R$, also
+  $ r in R => exists r_1 in R, i in I, r_1 dot i = r $
   Sei $r_1 = i^(-1) dot r$ (Multiplikatives Invers existiert in dem Körper). \
   Es gilt $r_1 dot i = i^(-1) dot r dot i = r$. \
   #line()
   "$arrow.double.l$"\
-  Wenn $(R, +, dot)$ nur die zwei trivialen Ideale hat, dann folgt 
-  $ (r) = R or (r) = (0)  quad forall r in R " mit" r eq.not 0 $
+  Wenn $(R, +, dot)$ nur die zwei trivialen Ideale hat, dann folgt
+  $ (r) = R or (r) = (0) quad forall r in R " mit" r eq.not 0 $
   $(r) = (0)$ ist aber nicht möglich, da $r in.not (0) quad forall r in R "mit" r eq.not 0$.
   Es gilt also:
 
   $ (1) = (r) = R quad forall r in R $
-  Zu zeigen ist: Für jedes $r in R$ existiert ein Multiplikatives Inverses $r^(-1)$ mit $r dot r^(-1) = r^(-1) dot r = 1 $. \
+  Zu zeigen ist: Für jedes $r in R$ existiert ein Multiplikatives Inverses $r^(-1)$ mit $r dot r^(-1) = r^(-1) dot r = 1$. \
   Da $(1) = (r)$ gilt, wissen wir $exists r_1 in R, r_1 dot r = 1$, was für jedes $r$ ein Multiplikatives Invers erzeugt.
 
 ]
