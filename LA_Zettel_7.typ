@@ -97,6 +97,37 @@ Das ist ein Wiederspruch. Es handelt sich also um keinen Ring
   $=>(pset(X),triangle,inter)$ ist nicht nullteilerfrei und somit kein Integritätsring.
 ]
 
+=== b)
+#proof[
+
+  *$ (i)=> (i i): $*
+  $ (i): forall a in R: a != 0_R => a dot b != 0_R $
+  $ f: R in.rev a |-> a dot b in R $
+  $ "Kern"(f) = {a|a dot b = 0_R} = {0_R} $
+  $ I: R \/ {0_R}-> "Bild"(f) $
+  $ a+"Kern"(f) = [a] |-> f(a) $
+  Homomorphiesatz für Ringe
+  $=>I$ ist ein Isomorphismus
+  $ pi: R in.rev a-> [a] in R\/{0_R} $
+  Da $ R \/{0_R} = {a+0_R = [a] a in R} = {a = [a]| a in R} $
+  ist $pi$ injektiv.
+  Es gilt außerden, das:
+  $ f = I compose pi $
+  Da $I,pi$ injektiv  $=> f$ injektiv
+
+  *$ (i i) => (i i i) $*
+  $ (i i): (forall a,c in R: f(a) = f(c)=> a = c) $
+  $ <=> (forall a,c in R: a dot b = c dot b => a = c) $
+
+  *$ (i i i)=> (i) $*
+  $ (i i i):(forall a,b in R: a dot b = c dot b => a = c) $
+  Es gilt außerdem $0_R dot b = 0_R$
+  $ "Sei" a dot b = 0_R = 0_R dot b => a = 0_R $
+  $=>$ b ist kein Rechtsnullteiler
+
+  *$=> ((i)=> (i i)=> (i i i)=> (i)) => "Ringschluss"$*
+
+]
 == Aufgabe 3
 === a)
 Es seien $(R_1,+_1,dot_1),(R_2,+_2,dot_2)$ Ringe und $f: R_1 -> R_2$ ein Homomorphisums.
