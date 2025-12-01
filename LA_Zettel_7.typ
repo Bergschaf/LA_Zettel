@@ -4,6 +4,65 @@
 Bearbeitet von Leon Krasniqi, Christian Krause, Silas Gaschler (Tutorium: Gregor Teupke (Mi 16:15))
 
 == Aufgabe 1
+
+== Aufgabe 2
+=== a)
+#lemma[
+  $(ZZ_3,+_3,dot_3)$ ist ein Integritätsring, $(pset(X), triangle, inter)$ aber nicht.
+]
+=== i)
+#proof[
+  1. $(ZZ_3,dot_3)$ hat nur 3 Elemente und muss daher abelsch sein.
+  2. $(ZZ_3,+_3,dot_3)$ ist ein Ring mit Eins, denn:
+  $ forall x in ZZ_3: 1 dot_3 x = x $
+  3. $(ZZ_3,+_3,dot_3)$ ist nullteilerfrei, denn:
+  $ 1 dot_3 1 =1 !=0 $
+  $ 1 dot_3 2 !=0 $
+  $ 2 dot_3 2!=0 $
+]
+=== ii)
+#proof[
+  1. Sei $A,B subset X, A,B!=emptyset,A "und" B$ sind disjunkt, dann gilt:
+  $ A inter B = emptyset $
+  $=>(pset(X),triangle,inter)$ ist nicht nullteilerfrei und somit kein Integritätsring.
+]
+== Aufgabe 3
+Es seien $(R_1,+_1,dot_1),(R_2,+_2,dot_2)$ Ringe und $f: R_1 -> R_2$ ein Homomorphisums.
+=== i)
+#lemma[
+  $"Bild"(f)$ ist ein Unterring von $(R_2,+_2,dot_2).$
+]Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Bild"(f) != emptyset$, weil:
+  $ f(0_R_1)= 0_R_2 => 0_R_2 in "Bild"(f) $
+  2. $ a_2,b_2 in "Bild"(f) and a_1,b_1 in R_1: $
+  $ a_2 +_2 (-b_2)= f(a_1) +_2 (-f(b_1)) $
+  $ = f(a_1) +_2 f(-b_1) $
+  $ = f(a_1 +_1 (-b_1)) in "Bild"(f) $
+  3. $ a_2 dot_2 b_2^(-1)= f(a_1) dot_2 (f(b_1))^(-1) $
+  $ = f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1 dot_1 b_1^(-1)) in "Bild"(f) $
+]
+=== ii)
+#lemma[
+  $"Kern"(f)$ ist ein Unterring von $(R_1,+_1,dot_1)$.
+]
+Beweis durch das Unterringkriterium:
+#proof[
+  1. $"Kern"(f)!=emptyset$, weil:
+  $ f(0_R_1)=0_R_2 => 0_R_1 in "Kern"(f) $
+  2. $ a_1,b_1 in "Kern"(f): $
+  $ f(a_1 +_1 (-b_1))= f(a_1) +_2 f(-b_1) $
+  $ = f(a_1)+_2 (-f(b_1)) $
+  $ = 0_R_2 +_2 (-0_R_2) $
+  $ = 0_R_2 in "Kern"(f) $
+  3.
+  $ f(a_1 dot_1 b_1^(-1))= f(a_1) dot_2 f(b_1^(-1)) $
+  $ = f(a_1)dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 dot_2 f(b_1^(-1)) $
+  $ = 0_R_2 in "Kern"(f) $
+]
+
 (i)
 $(ZZ_3,+_3,dot_2)$
 Da $3$ eine Primzahl ist, ist nach script $(ZZ_3,+_3,dot_3)$ ein Körper.
