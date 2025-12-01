@@ -234,7 +234,16 @@ $2ZZ = {2k | k in ZZ}$
 ]
 
 == iii)
-TODOTODOTODOTDOTODOTODO
+#lemma[
+  Seien $X$ und $Y$ Mengen mit $Y subset.eq X$. $pset (Y)$ bildet ein Ideal in $(pset (X), Delta, inter)$.
+]
+#proof[
+  + Zu zeigen: $a Delta b in pset (Y) quad forall a,b in pset (Y)$. \
+    $ a Delta b = a \\ b inter b \\ a subset.eq a union b subset.eq Y => a Delta b in pset (Y) $
+  + Zu zeigen $ a inter x in pset (Y) quad forall a in pset (Y), forall x in pset (X)$
+    $ a inter x subset.eq a subset.eq Y => a inter x in pset (Y) $
+
+]
 == b)
 
 #lemma[
@@ -337,6 +346,41 @@ Sei $(R, + , dot)$ ein unitärer, kommutativer Ring.
   Da $(1) = (r)$ gilt, wissen wir $exists r_1 in R, r_1 dot r = 1$, was für jedes $r$ ein Multiplikatives Invers erzeugt.
 
 ]
+=== d)
+#lemma[
+  Es sei $X$ eine Menge mit  $Y subset.eq X$. 
+  Der Faktorring $#pset (X) \/ pset (Y) $ von $(pset (X), Delta, inter)$ ist isomorph zu $(pset (X \\ Y), Delta, inter)$.
+]
+#proof[
+   Sei $ f : pset (X) -> pset (X \\ Y) := x mapsto x \\ Y $
+  Zu zeigen: 
+  + $f$ ist RingHom: \
+    $ f(a Delta b) = (a Delta b) \\ Y = (a \\ b inter b \\ a) \\ Y = (a \\ b) \\ Y inter (b \\ a) \\ Y  \
+  = (a \\ Y) \\ b inter (b \\ Y) \\ a \
+  = (a \\ Y) \\ (b \\ Y) inter (b \\ Y) \\ (a \\ Y) \
+  =  a \\ Y Delta b \\ Y = f(a) Delta f(b) $
+
+  $ f(a inter b) = (a inter b) \\ Y = a \\ Y inter b \\ Y = f(a) inter f(b)
+  $
+
+  $ f(X) = f(X \\ Y) quad "1 wird auf 1 abgebildet" $
+    #line()
+  + $ker(f) = pset (Y)$, da $x \\ Y = emptyset$ genau dann, wenn $x subset.eq Y$ (also $x in pset(Y)$)
+    #line()
+  + $im(f) = pset (X \\ Y)$, da $f(pset (X \\ Y)) = pset (X \\ Y)$, d.h. alle Elemente aus $pset (X \\ Y)$ werden mindestens einmal getroffen.
+]
+
+== e)
+Seien $A, B in pset (X)$
++ $(A) = pset (A)$, da für ein Ideal gelten muss: $(A) inf x subset.eq (A) quad forall x in pset (X)$.
+  $x$ kann hier insbesondere alle Teilmengen von $A$ annehmen. \
+  Damit gilt $(A,B) = pset (A) union pset (B) = pset (A union B)$ und $(A, B) = (A union B)$
++ $(9,15)$. Wir wissen, dass $3 in (9,15)$, da $3 = 9 - (15 - 9) in (9,15)$ (folgt aus der Abgeschlossenheit unter Addition). 
+  Alle weitere Zahlen, die wir durch Addition und Subtraktion von 9 und 15 erhalten können siind vielfache von 3. Es gilt also 
+  $ (9,15) = {3k | k in ZZ} = (3) $
+
+
+
 
 == Aufgabe 5
 a)
